@@ -10,6 +10,7 @@ import java.io.IOException;
 import sistema.logico.Cliente;
 import java.util.ArrayList;
 import sistema.principal.Aplicacion;
+import java.util.Random;
 
 public class Controller {
      Model model;
@@ -32,6 +33,54 @@ public class Controller {
     }
     
     public void exit(){
+    }
+    
+    public boolean verificaContraseña()
+    {
+        int contador=0;
+        int cant=0;
+        int mayus = 0;
+        int minus=0;
+        int num=0;
+        String contraseña="";
+
+        if(contraseña.length()==7)
+        {
+            cant+=1;
+        }
+        
+        for(int j=0; j<contraseña.length();j++) {
+
+            char caracter= contraseña.charAt(j);
+            if(Character.isUpperCase(caracter))
+            {
+                mayus+=1;
+            }
+        }
+         //////////////////////////////////////////////
+         for(int j=0; j<contraseña.length();j++) {
+
+            char caracter= contraseña.charAt(j);
+            if(Character.isLowerCase(caracter))
+            {
+                minus+=1;
+            }
+        }
+         ///////////////////////////////////////////////
+         for(int j=0; j<contraseña.length();j++) {
+
+            char caracter= contraseña.charAt(j);
+            if(Character.isDigit(caracter))
+            {
+                num+=1;
+            }
+        }
+
+        if(cant==1&&mayus>1&&minus>1&&num>1)
+            System.out.println("La contaseña es fuerte");
+
+        else
+            System.out.println("La contraseña es débil");
     }
     
     // Controller methods that respond to View events
