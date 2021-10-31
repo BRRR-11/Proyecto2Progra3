@@ -91,11 +91,15 @@ public class inicio  extends javax.swing.JFrame implements java.util.Observer {
         PanelFondo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, -1, -1));
         PanelFondo.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 220, 215, -1));
 
+        buttonAceptar.setBackground(new java.awt.Color(0, 102, 102));
         buttonAceptar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        buttonAceptar.setForeground(new java.awt.Color(255, 255, 255));
         buttonAceptar.setText("Aceptar");
         PanelFondo.add(buttonAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 330, 150, -1));
 
+        buttonCancelar.setBackground(new java.awt.Color(0, 102, 102));
         buttonCancelar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        buttonCancelar.setForeground(new java.awt.Color(255, 255, 255));
         buttonCancelar.setText("Cancelar");
         PanelFondo.add(buttonCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 330, 160, -1));
 

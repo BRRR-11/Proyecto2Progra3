@@ -67,14 +67,17 @@ public class ViewPrincipal extends javax.swing.JFrame implements java.util.Obser
         jPanelPrincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         buttonRetiro.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        buttonRetiro.setForeground(new java.awt.Color(255, 255, 255));
         buttonRetiro.setText("HACER RETIRO");
         jPanelPrincipal.add(buttonRetiro, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, 330, 100));
 
         buttonClave.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        buttonClave.setForeground(new java.awt.Color(255, 255, 255));
         buttonClave.setText("CAMBIO DE CLAVE");
         jPanelPrincipal.add(buttonClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 270, 330, 100));
 
         buttonSalir.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        buttonSalir.setForeground(new java.awt.Color(255, 255, 255));
         buttonSalir.setText("SALIR");
         jPanelPrincipal.add(buttonSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 430, 330, 100));
 

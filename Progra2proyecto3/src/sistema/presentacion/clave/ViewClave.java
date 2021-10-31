@@ -76,12 +76,15 @@ public class ViewClave extends javax.swing.JFrame implements java.util.Observer 
         labelNueva.setText("Clave Nueva");
 
         buttonLimpiar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        buttonLimpiar.setForeground(new java.awt.Color(255, 255, 255));
         buttonLimpiar.setText("Limpiar");
 
         buttonAceptar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        buttonAceptar.setForeground(new java.awt.Color(255, 255, 255));
         buttonAceptar.setText("Aceptar");
 
         buttonRegresar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        buttonRegresar.setForeground(new java.awt.Color(255, 255, 255));
         buttonRegresar.setText("Regresar");
 
         labelActual.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
