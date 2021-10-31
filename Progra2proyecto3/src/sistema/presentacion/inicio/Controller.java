@@ -37,12 +37,13 @@ public class Controller {
     
     public boolean verificaContraseña()
     {
+        String contraseña=this.view.TextPass.getText();
         int contador=0;
         int cant=0;
         int mayus = 0;
         int minus=0;
         int num=0;
-        String contraseña="";
+       
 
         if(contraseña.length()==7)
         {
@@ -77,10 +78,15 @@ public class Controller {
         }
 
         if(cant==1&&mayus>1&&minus>1&&num>1)
+        {
             System.out.println("La contaseña es fuerte");
-
+            return true;
+        }
         else
+        {
             System.out.println("La contraseña es débil");
+            return false;
+        }
     }
     
     // Controller methods that respond to View events
