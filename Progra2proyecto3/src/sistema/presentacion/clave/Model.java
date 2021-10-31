@@ -3,16 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sistema.presentacion.inicio;
+package sistema.presentacion.clave;
 
 import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 import sistema.logico.Cliente;
 
-
+/**
+ *
+ * @author ariqq
+ */
 public class Model extends Observable{
-    
     Cliente cliente;
     List<Cliente> clientes;
 
@@ -42,5 +44,4 @@ public class Model extends Observable{
         this.setChanged();
         this.notifyObservers();
     }
-    
 }

@@ -3,22 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sistema.presentacion.inicio;
+package sistema.presentacion.principal;
 
-
-import java.io.IOException;
-import sistema.logico.Cliente;
-import java.util.ArrayList;
-import sistema.principal.Aplicacion;
-
+/**
+ *
+ * @author ariqq
+ */
 public class Controller {
-     Model model;
-     inicio view;
+    Model model;
+    ViewPrincipal view;
 
-    public Controller(Model model, inicio view) {
+    public Controller(Model model, ViewPrincipal view) {
         this.model = model;
         this.view = view;
-       
+        // invoke Model sets for initialization before linking to the view
+        // problably get the data from Service
         view.setModel(model);
         view.setController(this);
     }
@@ -45,7 +44,6 @@ public class Controller {
     
     public void facturasShow(){
         this.hide();
-        //Application.FACTURAS.show();
-    } */
-    
+        Application.FACTURAS.show();
+    }    */
 }

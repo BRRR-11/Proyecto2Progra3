@@ -5,14 +5,19 @@
  */
 package sistema.logico;
 
-import Data.Data;
+import Data.Database;
 //import data.XmlPersister;
 import java.util.List;
 import java.util.stream.Collectors;
 
 //_ArianaQuesada_PabloChavarria_DanielBarrientos
 
+import java.util.List;
+import Data.ClienteDao;
+//import Data.FacturaDao;
+
 public class Service {
+    
     // Singleton implementation
     private static Service theInstance;
     public static Service instance(){
@@ -23,47 +28,50 @@ public class Service {
     }
     
     // Service data
+      //FacturaDao fDao ;
+      ClienteDao cDao;
     
-    private Data data;
+
+    
+    // Service methods
+    public Cliente clienteGet(String cedula) throws Exception{
+        return cDao.read(cedula);
+    }
+    
+    /*public List<Cliente> clienteSearch(String cedula){
+        return cDao.findByCedula(cedula);       
+    }
     
     public List<Cliente> clienteAll(){
-        return data.getClientes();       
-    }
-    public List<Cliente> getCliente(){
-        return data.getClientes();
+        return cDao.findAll();
+    }*/
+    
+    public void clienteAdd(Cliente cliente) throws Exception{
+        cDao.create(cliente);
+    }    
+
+//---------------
+    /*public Factura facturaGet(String numero) throws Exception{
+        return fDao.read(numero);
     }
     
-    
-    public Cliente clienteGet(String cedula) throws Exception{
-        Cliente result=data.getClientes().stream().filter(c->c.getCedula().equals(cedula)).findFirst().orElse(null);
-        if (result!=null) return result;
-        else throw new Exception("Cliente no existe");   
+    public List<Factura> facturaSearch(String numero){
+        return fDao.findByNumero(numero);       
     }
     
-     public List<Cliente> clienteSearch(String cedula){
-        List<Cliente> result=data.getClientes().stream().filter(c->c.getCedula().startsWith(cedula)).collect(Collectors.toList());
-       return result;        
-    }
+    public void facturaAdd(Factura factura) throws Exception{
+        fDao.create(factura);
+    }    */
      
-     public void creandoCliente(Cliente cli) throws Exception {
-        Cliente resul = data.getClientes().stream().filter(c->c.getCedula().equals(cli.getCedula())).findFirst().orElse(null);
-        if(resul == null)data.getClientes().add(cli); 
-        else throw new Exception("Cliente ya existe");
-    }
-  
-     public void store(){
-        try {
-            //XmlPersister.instance().store(data);
-        } catch (Exception ex) {
-        }
-    }
     public Service() {
         try{
-           // data = XmlPersister.instance().load();
+              //fDao = new FacturaDao();
+              cDao= new ClienteDao();
         }
         catch(Exception e){
-            data =  new Data();
-        }
-    }
 
+        }
+
+    }
+    
 }

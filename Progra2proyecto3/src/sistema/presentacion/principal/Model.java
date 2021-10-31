@@ -3,35 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sistema.presentacion.inicio;
-
-import java.util.List;
+package sistema.presentacion.principal;
 import java.util.Observable;
 import java.util.Observer;
-import sistema.logico.Cliente;
-
-
+/**
+ *
+ * @author ariqq
+ */
 public class Model extends Observable{
-    
-    Cliente cliente;
-    List<Cliente> clientes;
+        // Model attributes here
+    // Model gets and sets here
 
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
-    }
-
-    public List<Cliente> getClientes() {
-        return clientes;
-    }
-
-    public void setClientes(List<Cliente> clientes) {
-        this.clientes = clientes;
-    }
-    
     @Override
     public synchronized void addObserver(Observer o) {
         super.addObserver(o); 
@@ -42,5 +24,4 @@ public class Model extends Observable{
         this.setChanged();
         this.notifyObservers();
     }
-    
 }
