@@ -69,9 +69,12 @@ public class inicio  extends javax.swing.JFrame implements java.util.Observer {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Pantalla de Login");
 
+        PanelFondo.setBackground(new java.awt.Color(0, 51, 51));
         PanelFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setBackground(new java.awt.Color(0, 102, 102));
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Usuario");
         PanelFondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, -1, -1));
 
@@ -83,27 +86,28 @@ public class inicio  extends javax.swing.JFrame implements java.util.Observer {
         PanelFondo.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, 215, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Contraseña");
         PanelFondo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, -1, -1));
         PanelFondo.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 220, 215, -1));
 
         buttonAceptar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         buttonAceptar.setText("Aceptar");
-        PanelFondo.add(buttonAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 360, 150, -1));
+        PanelFondo.add(buttonAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 330, 150, -1));
 
         buttonCancelar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         buttonCancelar.setText("Cancelar");
-        PanelFondo.add(buttonCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 360, 160, -1));
+        PanelFondo.add(buttonCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 330, 160, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 631, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 496, Short.MAX_VALUE)
         );
 
         pack();

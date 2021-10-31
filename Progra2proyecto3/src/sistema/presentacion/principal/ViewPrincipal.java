@@ -63,6 +63,7 @@ public class ViewPrincipal extends javax.swing.JFrame implements java.util.Obser
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Pantalla Principal");
 
+        jPanelPrincipal.setBackground(new java.awt.Color(0, 51, 51));
         jPanelPrincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         buttonRetiro.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
