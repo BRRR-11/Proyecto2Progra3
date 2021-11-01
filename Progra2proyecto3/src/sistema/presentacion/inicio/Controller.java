@@ -3,23 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sistema.presentacion.clave;
+package sistema.presentacion.inicio;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import sistema.logico.Service;
-import sistema.logico.Cliente;
 import sistema.principal.Aplicacion;
+import sistema.logico.Cliente;
+import sistema.logico.Service;
 /**
  *
  * @author ariqq
  */
 public class Controller {
-     Model model;
-     ViewClave view;
+    Model model;
+    ViewInicio view;
 
-    public Controller(Model model, ViewClave view) {
+    public Controller(Model model, ViewInicio view) {
         this.model = model;
         this.view = view;
         // invoke Model sets for initialization before linking to the view
@@ -37,7 +37,7 @@ public class Controller {
     
     public void hide(){
         this.view.setVisible(false);
-        Aplicacion.PRINCIPAL.show();
+        //Aplicacion.PRINCIPAL.show();
     }    
     
     // Controller methods that respond to View events
@@ -59,7 +59,7 @@ public class Controller {
     
     /*public void  clienteSearch(String cedula){
         List<Cliente> clientes= Service.instance().clienteSearch(cedula);
-        model.setCliente(new Cliente(cedula,"",""));
+        model.setCliente(new Cliente("",""));
         model.setClientes(clientes);
         model.commit();
     }*/
@@ -81,5 +81,4 @@ public class Controller {
         }
         
     }
-    
 }
