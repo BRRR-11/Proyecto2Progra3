@@ -74,6 +74,11 @@ public class ViewPrincipal extends javax.swing.JFrame implements java.util.Obser
         buttonClave.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         buttonClave.setForeground(new java.awt.Color(255, 255, 255));
         buttonClave.setText("CAMBIO DE CLAVE");
+        buttonClave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonClaveActionPerformed(evt);
+            }
+        });
         jPanelPrincipal.add(buttonClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 270, 330, 100));
 
         buttonSalir.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -94,6 +99,10 @@ public class ViewPrincipal extends javax.swing.JFrame implements java.util.Obser
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void buttonClaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonClaveActionPerformed
+        controller.claveShow();
+    }//GEN-LAST:event_buttonClaveActionPerformed
 
     /**
      * @param args the command line arguments

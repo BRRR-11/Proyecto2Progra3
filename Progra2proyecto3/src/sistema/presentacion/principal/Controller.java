@@ -5,6 +5,8 @@
  */
 package sistema.presentacion.principal;
 
+import sistema.principal.Aplicacion;
+
 /**
  *
  * @author ariqq
@@ -31,6 +33,10 @@ public class Controller {
     }
     
     public void exit(){
+    }
+    public void claveShow(){
+        this.hide();
+        Aplicacion.CLAVE.show();
     }
     
     // Controller methods that respond to View events
