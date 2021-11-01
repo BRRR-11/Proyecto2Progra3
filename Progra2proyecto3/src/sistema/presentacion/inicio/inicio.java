@@ -18,6 +18,7 @@ import java.util.logging.Logger;
 //import javax.imageio.ImageIO;
 //import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Admin
@@ -25,7 +26,7 @@ import javax.swing.JButton;
 public class inicio  extends javax.swing.JFrame implements java.util.Observer {
 
    //**************  MVC ***********
-      Controller controller;
+    Controller controller;
     Model model;
     
     public void setController(Controller controller){
@@ -94,6 +95,11 @@ public class inicio  extends javax.swing.JFrame implements java.util.Observer {
         buttonAceptar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         buttonAceptar.setForeground(new java.awt.Color(255, 255, 255));
         buttonAceptar.setText("Aceptar");
+        buttonAceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonAceptarActionPerformed(evt);
+            }
+        });
         PanelFondo.add(buttonAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 330, 150, -1));
 
         buttonCancelar.setBackground(new java.awt.Color(0, 102, 102));
@@ -120,6 +126,15 @@ public class inicio  extends javax.swing.JFrame implements java.util.Observer {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void buttonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAceptarActionPerformed
+        if(controller.verificaContraseña() == true){
+            controller.principalShow();
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"Contraseña incorrecta");
+        }
+    }//GEN-LAST:event_buttonAceptarActionPerformed
 
     /**
      * @param args the command line arguments

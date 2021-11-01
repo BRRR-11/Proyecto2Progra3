@@ -34,6 +34,10 @@ public class Controller {
     
     public void exit(){
     }
+     public void principalShow(){
+        this.hide();
+        Aplicacion.PRINCIPAL.show();
+    }
     
     public boolean verificaContraseña()
     {
