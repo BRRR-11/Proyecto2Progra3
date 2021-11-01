@@ -62,9 +62,9 @@ public class inicio  extends javax.swing.JFrame implements java.util.Observer {
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        TextPass = new javax.swing.JTextField();
         buttonAceptar = new javax.swing.JButton();
         buttonCancelar = new javax.swing.JButton();
+        textPass = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Pantalla de Login");
@@ -89,7 +89,6 @@ public class inicio  extends javax.swing.JFrame implements java.util.Observer {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Contraseña");
         PanelFondo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, -1, -1));
-        PanelFondo.add(TextPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 220, 215, -1));
 
         buttonAceptar.setBackground(new java.awt.Color(0, 102, 102));
         buttonAceptar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -102,6 +101,7 @@ public class inicio  extends javax.swing.JFrame implements java.util.Observer {
         buttonCancelar.setForeground(new java.awt.Color(255, 255, 255));
         buttonCancelar.setText("Cancelar");
         PanelFondo.add(buttonCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 330, 160, -1));
+        PanelFondo.add(textPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 220, 220, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -158,12 +158,12 @@ public class inicio  extends javax.swing.JFrame implements java.util.Observer {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelFondo;
-    public javax.swing.JTextField TextPass;
     private javax.swing.JButton buttonAceptar;
     private javax.swing.JButton buttonCancelar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField jTextField1;
+    public javax.swing.JPasswordField textPass;
     // End of variables declaration//GEN-END:variables
 
     @Override

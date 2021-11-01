@@ -37,7 +37,7 @@ public class Controller {
     
     public boolean verificaContraseña()
     {
-        String contraseña=this.view.TextPass.getText();
+        String contraseña=this.view.textPass.getText();
         int contador=0;
         int cant=0;
         int mayus = 0;
