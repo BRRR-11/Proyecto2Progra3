@@ -49,20 +49,58 @@ public class Service {
     public void clienteAdd(Cliente cliente) throws Exception{
         cDao.create(cliente);
     }    
+    public boolean verificaContraseña(String contras) throws Exception{
+        String contraseña= contras;
+        int cant=0;
+        int mayus = 0;
+        int minus=0;
+        int num=0;
+    
+        if(contraseña.length()==7)
+        {
+            cant+=1;
+        }
+        
+        for(int j=0; j<contraseña.length();j++) {
 
-//---------------
-    /*public Factura facturaGet(String numero) throws Exception{
-        return fDao.read(numero);
+            char caracter= contraseña.charAt(j);
+            if(Character.isUpperCase(caracter))
+            {
+                mayus+=1;
+            }
+        }
+         //////////////////////////////////////////////
+         for(int j=0; j<contraseña.length();j++) {
+
+            char caracter= contraseña.charAt(j);
+            if(Character.isLowerCase(caracter))
+            {
+                minus+=1;
+            }
+        }
+         ///////////////////////////////////////////////
+         for(int j=0; j<contraseña.length();j++) {
+
+            char caracter= contraseña.charAt(j);
+            if(Character.isDigit(caracter))
+            {
+                num+=1;
+            }
+        }
+
+        if(cant==1&&mayus>1&&minus>1&&num>1)
+        {
+            System.out.println("La contaseña es fuerte");
+            return true;
+        }
+        else
+        {
+            System.out.println("La contraseña es débil");
+            return false;
+        }
     }
-    
-    public List<Factura> facturaSearch(String numero){
-        return fDao.findByNumero(numero);       
-    }
-    
-    public void facturaAdd(Factura factura) throws Exception{
-        fDao.create(factura);
-    }    */
-     
+
+
     public Service() {
         try{
               //fDao = new FacturaDao();

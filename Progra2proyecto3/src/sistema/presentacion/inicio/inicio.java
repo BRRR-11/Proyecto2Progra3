@@ -5,24 +5,18 @@
  */
 package sistema.presentacion.inicio;
 
-import java.awt.Cursor;
-import java.awt.Dimension;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import sistema.logico.Cliente;
+
 import java.util.Observable;
-import javax.swing.DefaultComboBoxModel;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import sistema.logico.Cliente;
+
 //import javax.imageio.ImageIO;
 //import javax.swing.ImageIcon;
-import javax.swing.JButton;
+
 /**
  *
  * @author Admin
  */
-public class inicio  extends javax.swing.JFrame implements java.util.Observer {
+public class inicio extends javax.swing.JFrame implements java.util.Observer {
 
    //**************  MVC ***********
     Controller controller;
@@ -44,6 +38,12 @@ public class inicio  extends javax.swing.JFrame implements java.util.Observer {
     public Model getModel() {
         return model;
     }
+    @Override
+    public void update(Observable o, Object arg) {
+        Cliente cliente = model.getCliente();
+        usuarioText.setText(cliente.getNombre());
+        passText.setText(cliente.getPassword());        
+    }
      
     public inicio() {
         initComponents();
@@ -58,82 +58,75 @@ public class inicio  extends javax.swing.JFrame implements java.util.Observer {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        PanelFondo = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        buttonAceptar = new javax.swing.JButton();
+        buttonAgregar = new javax.swing.JButton();
         buttonCancelar = new javax.swing.JButton();
-        textPass = new javax.swing.JPasswordField();
+        usuarioText = new javax.swing.JTextField();
+        passText = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Pantalla de Login");
 
-        PanelFondo.setBackground(new java.awt.Color(0, 51, 51));
-        PanelFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setBackground(new java.awt.Color(0, 102, 102));
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Usuario");
-        PanelFondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, -1, -1));
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-        PanelFondo.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, 215, -1));
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Contraseña");
-        PanelFondo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, -1, -1));
 
-        buttonAceptar.setBackground(new java.awt.Color(0, 102, 102));
-        buttonAceptar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        buttonAceptar.setForeground(new java.awt.Color(255, 255, 255));
-        buttonAceptar.setText("Aceptar");
-        buttonAceptar.addActionListener(new java.awt.event.ActionListener() {
+        buttonAgregar.setText("Agregar");
+        buttonAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonAceptarActionPerformed(evt);
+                buttonAgregarActionPerformed(evt);
             }
         });
-        PanelFondo.add(buttonAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 330, 150, -1));
 
-        buttonCancelar.setBackground(new java.awt.Color(0, 102, 102));
-        buttonCancelar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        buttonCancelar.setForeground(new java.awt.Color(255, 255, 255));
         buttonCancelar.setText("Cancelar");
-        PanelFondo.add(buttonCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 330, 160, -1));
-        PanelFondo.add(textPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 220, 220, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 631, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(157, 157, 157)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2))
+                        .addGap(23, 23, 23)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(usuarioText)
+                            .addComponent(passText, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(131, 131, 131)
+                        .addComponent(buttonAgregar)
+                        .addGap(137, 137, 137)
+                        .addComponent(buttonCancelar)))
+                .addContainerGap(181, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 496, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(116, 116, 116)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(usuarioText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(passText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 146, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonAgregar)
+                    .addComponent(buttonCancelar))
+                .addGap(122, 122, 122))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void buttonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAceptarActionPerformed
-        if(controller.verificaContraseña()){
-            controller.principalShow();
-        }
-        else{
-            System.out.print("No se pudo");
-        }
-    }//GEN-LAST:event_buttonAceptarActionPerformed
+    private void buttonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAgregarActionPerformed
+        controller.verificaContraseña();
+    }//GEN-LAST:event_buttonAgregarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -171,17 +164,13 @@ public class inicio  extends javax.swing.JFrame implements java.util.Observer {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel PanelFondo;
-    private javax.swing.JButton buttonAceptar;
+    private javax.swing.JButton buttonAgregar;
     private javax.swing.JButton buttonCancelar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField1;
-    public javax.swing.JPasswordField textPass;
+    public javax.swing.JPasswordField passText;
+    private javax.swing.JTextField usuarioText;
     // End of variables declaration//GEN-END:variables
 
-    @Override
-    public void update(Observable o, Object arg) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+  
 }

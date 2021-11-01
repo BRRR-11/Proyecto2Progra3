@@ -71,7 +71,7 @@ public class Controller {
     public void clienteAdd(Cliente cliente){
         try {
             Service.instance().clienteAdd(cliente);
-            model.setCliente(new Cliente("","",""));
+            model.setCliente(new Cliente("",""));
             model.setClientes(Arrays.asList(cliente));
             model.commit();
         } catch (Exception ex) {

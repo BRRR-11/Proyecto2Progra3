@@ -30,7 +30,7 @@ public class Cliente {
         canton = new Canton();
         distrito = new Distrito();
     }*/
-   public Cliente(String ced, String nom, String passw)
+   public Cliente(String nom, String passw)
    {
         nombre = nom;
         password=passw;

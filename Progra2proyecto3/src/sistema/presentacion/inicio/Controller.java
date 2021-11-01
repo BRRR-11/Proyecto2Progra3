@@ -9,8 +9,11 @@ package sistema.presentacion.inicio;
 import java.io.IOException;
 import sistema.logico.Cliente;
 import java.util.ArrayList;
+import java.util.Arrays;
 import sistema.principal.Aplicacion;
 import java.util.Random;
+import javax.swing.JOptionPane;
+import sistema.logico.Service;
 
 public class Controller {
      Model model;
@@ -39,57 +42,30 @@ public class Controller {
         Aplicacion.PRINCIPAL.show();
     }
     
-    public boolean verificaContraseña()
+    public void verificaContraseña()
     {
-        String contraseña=this.view.textPass.getToolTipText();
-        int cant=0;
-        int mayus = 0;
-        int minus=0;
-        int num=0;
-    
-        if(contraseña.length()==7)
-        {
-            cant+=1;
-        }
-        
-        for(int j=0; j<contraseña.length();j++) {
-
-            char caracter= contraseña.charAt(j);
-            if(Character.isUpperCase(caracter))
-            {
-                mayus+=1;
-            }
-        }
-         //////////////////////////////////////////////
-         for(int j=0; j<contraseña.length();j++) {
-
-            char caracter= contraseña.charAt(j);
-            if(Character.isLowerCase(caracter))
-            {
-                minus+=1;
-            }
-        }
-         ///////////////////////////////////////////////
-         for(int j=0; j<contraseña.length();j++) {
-
-            char caracter= contraseña.charAt(j);
-            if(Character.isDigit(caracter))
-            {
-                num+=1;
-            }
-        }
-
-        if(cant==1&&mayus>1&&minus>1&&num>1)
-        {
-            System.out.println("La contaseña es fuerte");
-            return true;
-        }
-        else
-        {
-            System.out.println("La contraseña es débil");
-            return false;
+        try{
+            Service.instance().verificaContraseña(String.valueOf(this.view.passText.getPassword()));
+            model.setCliente(new Cliente("",""));
+            //model.setClientes(Arrays.asList(cliente));
+            model.commit();
+            
+        }catch (Exception ex) {
+            JOptionPane.showMessageDialog(null,"Contraseña Incorrecta");
         }
     }
+    /* public void clienteAdd(Cliente cliente){
+        try {
+            Service.instance().clienteAdd(cliente);
+            model.setCliente(new Cliente("","",""));
+            model.setClientes(Arrays.asList(cliente));
+            model.commit();
+        } catch (Exception ex) {
+            
+        }
+        
+    }
+*/
     
     // Controller methods that respond to View events
     // probably invoke methods from Service,
