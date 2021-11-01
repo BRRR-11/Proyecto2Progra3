@@ -25,7 +25,7 @@ public class Database {
         }
         return theInstance;
     }
-    public static final String PROPERTIES_FILE_NAME="/database.ptr";        
+    public static final String PROPERTIES_FILE_NAME="/database.properties";        
     Connection cnx;
     public Database(){
         cnx=this.getConnection();            
