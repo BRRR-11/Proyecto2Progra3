@@ -18,7 +18,6 @@ import java.util.logging.Logger;
 //import javax.imageio.ImageIO;
 //import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JOptionPane;
 /**
  *
  * @author Admin
@@ -132,7 +131,7 @@ public class inicio  extends javax.swing.JFrame implements java.util.Observer {
             controller.principalShow();
         }
         else{
-            JOptionPane.showMessageDialog(null,"Contraseña incorrecta");
+            System.out.print("No se pudo");
         }
     }//GEN-LAST:event_buttonAceptarActionPerformed
 
