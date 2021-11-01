@@ -32,6 +32,8 @@ public class Aplicacion {
  
         
        System.out.print("_ArianaQuesada_PabloChavarria_DanielBarrientos");
+       System.out.print("test");
+
        INICIO.show();
         
         
