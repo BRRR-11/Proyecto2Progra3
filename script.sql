@@ -1,22 +1,13 @@
 
-CREATE DATABASE Facturacion;
+CREATE DATABASE Proyecto2;
 
-use Facturacion;
+use Proyecto2;
 
 create table Cliente (
-       cedula  varchar(10)  not null,
        nombre varchar(30) not null,  
-       telefono  varchar(10)  not null,
-       Primary Key (cedula)         
+       password  varchar(30)  not null,
+       Primary Key (nombre)         
      );
 
 
-create table Factura (
-    numero varchar(10) not null,
-    descripcion varchar(30) not null,
-    monto int,
-    cliente varchar(10),
-    Primary Key (numero)
-);
-
-ALTER TABLE Factura ADD Foreign Key (cliente) REFERENCES Cliente(cedula);
+ALTER TABLE Cliente ADD Foreign Key (cliente) REFERENCES Cliente(nombre);
