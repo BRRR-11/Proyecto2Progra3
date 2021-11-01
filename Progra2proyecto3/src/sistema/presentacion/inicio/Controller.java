@@ -41,14 +41,12 @@ public class Controller {
     
     public boolean verificaContraseña()
     {
-        String contraseña=this.view.textPass.getText();
-        int contador=0;
+        String contraseña=this.view.textPass.getToolTipText();
         int cant=0;
         int mayus = 0;
         int minus=0;
         int num=0;
-       
-
+    
         if(contraseña.length()==7)
         {
             cant+=1;

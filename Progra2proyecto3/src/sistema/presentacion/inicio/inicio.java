@@ -38,7 +38,7 @@ public class inicio  extends javax.swing.JFrame implements java.util.Observer {
     
     public void setModel(Model model){
         this.model=model;
-         model.addObserver(this);
+        model.addObserver(this);
     }
 
     public Model getModel() {
@@ -127,7 +127,7 @@ public class inicio  extends javax.swing.JFrame implements java.util.Observer {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void buttonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAceptarActionPerformed
-        if(controller.verificaContraseña() == true){
+        if(controller.verificaContraseña()){
             controller.principalShow();
         }
         else{
