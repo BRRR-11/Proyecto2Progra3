@@ -39,17 +39,5 @@ public class Controller {
         Aplicacion.CLAVE.show();
     }
     
-    // Controller methods that respond to View events
-    // probably invoke methods from Service,
-    // and set data to Model, which in turn causes the View to update 
-    
-    /*public void clientesShow(){
-        this.hide();
-        Application.CLIENTES.show();
-    }
-    
-    public void facturasShow(){
-        this.hide();
-        Application.FACTURAS.show();
-    }    */
+   
 }
