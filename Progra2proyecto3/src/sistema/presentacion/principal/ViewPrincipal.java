@@ -67,6 +67,11 @@ public class ViewPrincipal extends javax.swing.JFrame implements java.util.Obser
         salirBoton.setText("Salir");
 
         consultarBoton.setText("Consultar Saldo");
+        consultarBoton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                consultarBotonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -76,10 +81,9 @@ public class ViewPrincipal extends javax.swing.JFrame implements java.util.Obser
                 .addGap(228, 228, 228)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(consultarBoton, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(salirBoton, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE)
-                        .addComponent(retiroBoton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(cambioBoton, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE)))
+                    .addComponent(salirBoton, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE)
+                    .addComponent(retiroBoton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cambioBoton, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE))
                 .addContainerGap(300, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -98,6 +102,10 @@ public class ViewPrincipal extends javax.swing.JFrame implements java.util.Obser
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void consultarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultarBotonActionPerformed
+        controller.consultarShow();
+    }//GEN-LAST:event_consultarBotonActionPerformed
 
     /**
      * @param args the command line arguments

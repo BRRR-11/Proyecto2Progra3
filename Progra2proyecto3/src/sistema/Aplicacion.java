@@ -24,10 +24,16 @@ public class Aplicacion {
         sistema.presentacion.Principal.Controller controllerPrincipal = new sistema.presentacion.Principal.Controller(modelPrincipal,viewPrincipal);
         PRINCIPAL = controllerPrincipal;
         
+        sistema.presentacion.Consultar.Model modelConsultar =new sistema.presentacion.Consultar.Model() ;
+        sistema.presentacion.Consultar.ViewConsultar viewConsultar = new sistema.presentacion.Consultar.ViewConsultar();
+        sistema.presentacion.Consultar.Controller controllerConsultar = new sistema.presentacion.Consultar.Controller(modelConsultar,viewConsultar);
+        CONSULTAR = controllerConsultar;
+        
         
         INICIO.show();
         System.out.print(" Listo");
     }
     public static sistema.presentacion.Inicial.Controller INICIO;
     public static sistema.presentacion.Principal.Controller PRINCIPAL;
+    public static sistema.presentacion.Consultar.Controller CONSULTAR;
 }

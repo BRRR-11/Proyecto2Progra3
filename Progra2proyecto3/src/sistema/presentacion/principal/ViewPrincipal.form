@@ -27,11 +27,9 @@
               <EmptySpace min="-2" pref="228" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="consultarBoton" pref="243" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="salirBoton" pref="243" max="32767" attributes="0"/>
-                      <Component id="retiroBoton" max="32767" attributes="0"/>
-                      <Component id="cambioBoton" pref="243" max="32767" attributes="0"/>
-                  </Group>
+                  <Component id="salirBoton" pref="243" max="32767" attributes="0"/>
+                  <Component id="retiroBoton" max="32767" attributes="0"/>
+                  <Component id="cambioBoton" pref="243" max="32767" attributes="0"/>
               </Group>
               <EmptySpace pref="300" max="32767" attributes="0"/>
           </Group>
@@ -73,6 +71,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Consultar Saldo"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="consultarBotonActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

@@ -75,6 +75,11 @@ public class ViewConsultar extends javax.swing.JFrame implements java.util.Obser
         ConsultarBoton.setText("Consultar");
 
         regresarBoton.setText("Regresar");
+        regresarBoton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                regresarBotonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -109,7 +114,6 @@ public class ViewConsultar extends javax.swing.JFrame implements java.util.Obser
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(usuarioLabelConsul, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(8, 8, 8)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(passConsulText)
                     .addComponent(passLabelConsul, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -126,6 +130,10 @@ public class ViewConsultar extends javax.swing.JFrame implements java.util.Obser
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void regresarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regresarBotonActionPerformed
+        controller.hide();
+    }//GEN-LAST:event_regresarBotonActionPerformed
 
     /**
      * @param args the command line arguments
