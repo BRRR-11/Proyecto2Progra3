@@ -4,13 +4,41 @@
  * and open the template in the editor.
  */
 package sistema.presentacion.Consultar;
-
+import java.util.Observable;
+import sistema.logico.Cliente;
 /**
  *
  * @author ariqq
  */
-public class ViewConsultar extends javax.swing.JFrame {
+public class ViewConsultar extends javax.swing.JFrame implements java.util.Observer {
+//**************  MVC ***********
+    Controller controller;
+    Model model;
+    
+    public void setController(Controller controller){
+        this.controller=controller;
+    }
 
+    public Controller getController() {
+        return controller;
+    }
+    
+    public void setModel(Model model){
+        this.model=model;
+         model.addObserver(this);
+    }
+
+    public Model getModel() {
+        return model;
+    }
+    
+    @Override
+    public void update(Observable o, Object arg) {
+        Cliente cliente = model.getCliente();
+        usuarioConsulText.setText(cliente.getNombre());
+        passConsulText.setText(cliente.getContraseña());  
+    }
+//************** END MVC ***********
     /**
      * Creates new form ViewConsultar
      */
@@ -33,6 +61,8 @@ public class ViewConsultar extends javax.swing.JFrame {
         passConsulText = new javax.swing.JPasswordField();
         saldoLabel = new javax.swing.JLabel();
         saldoConsulText = new javax.swing.JTextField();
+        ConsultarBoton = new javax.swing.JButton();
+        regresarBoton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -42,43 +72,56 @@ public class ViewConsultar extends javax.swing.JFrame {
 
         saldoLabel.setText("Saldo");
 
+        ConsultarBoton.setText("Consultar");
+
+        regresarBoton.setText("Regresar");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(225, 225, 225)
+                .addGap(197, 197, 197)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(usuarioLabelConsul, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(passLabelConsul, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
-                    .addComponent(saldoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(passLabelConsul, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(saldoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(usuarioConsulText, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
+                    .addComponent(usuarioConsulText)
                     .addComponent(passConsulText)
-                    .addComponent(saldoConsulText))
-                .addContainerGap(297, Short.MAX_VALUE))
+                    .addComponent(saldoConsulText, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(152, 152, 152)
+                .addComponent(ConsultarBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
+                .addComponent(regresarBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(202, 202, 202))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(127, 127, 127)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(171, 171, 171)
-                        .addComponent(usuarioConsulText, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(usuarioConsulText, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(usuarioLabelConsul, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(8, 8, 8)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(passConsulText, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
-                    .addComponent(passLabelConsul, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(passConsulText)
+                    .addComponent(passLabelConsul, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(saldoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(saldoConsulText, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(311, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ConsultarBoton)
+                    .addComponent(regresarBoton))
+                .addGap(86, 86, 86))
         );
 
         pack();
@@ -120,8 +163,10 @@ public class ViewConsultar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ConsultarBoton;
     private javax.swing.JPasswordField passConsulText;
     private javax.swing.JLabel passLabelConsul;
+    private javax.swing.JButton regresarBoton;
     private javax.swing.JTextField saldoConsulText;
     private javax.swing.JLabel saldoLabel;
     private javax.swing.JTextField usuarioConsulText;

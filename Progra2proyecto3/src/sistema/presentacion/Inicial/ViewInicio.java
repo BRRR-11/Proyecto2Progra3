@@ -36,8 +36,7 @@ public class ViewInicio extends javax.swing.JFrame implements java.util.Observer
     public void update(Observable o, Object arg) {
         Cliente cliente = model.getCliente();
         usuarioText.setText(cliente.getNombre());
-        passText.setText(cliente.getContraseña());
-        
+        passText.setText(cliente.getContraseña());  
     }
 //************** END MVC ***********
     /**
