@@ -56,6 +56,7 @@ public class ViewPrincipal extends javax.swing.JFrame implements java.util.Obser
         retiroBoton = new javax.swing.JButton();
         cambioBoton = new javax.swing.JButton();
         salirBoton = new javax.swing.JButton();
+        consultarBoton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -65,6 +66,8 @@ public class ViewPrincipal extends javax.swing.JFrame implements java.util.Obser
 
         salirBoton.setText("Salir");
 
+        consultarBoton.setText("Consultar Saldo");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -72,22 +75,25 @@ public class ViewPrincipal extends javax.swing.JFrame implements java.util.Obser
             .addGroup(layout.createSequentialGroup()
                 .addGap(228, 228, 228)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(salirBoton, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE)
+                    .addComponent(consultarBoton, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(salirBoton, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE)
                         .addComponent(retiroBoton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(cambioBoton, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE)))
-                .addContainerGap(257, Short.MAX_VALUE))
+                .addContainerGap(300, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(90, 90, 90)
+                .addContainerGap(112, Short.MAX_VALUE)
+                .addComponent(consultarBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
                 .addComponent(retiroBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49)
+                .addGap(28, 28, 28)
                 .addComponent(cambioBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
+                .addGap(31, 31, 31)
                 .addComponent(salirBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(116, Short.MAX_VALUE))
+                .addGap(55, 55, 55))
         );
 
         pack();
@@ -130,6 +136,7 @@ public class ViewPrincipal extends javax.swing.JFrame implements java.util.Obser
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cambioBoton;
+    private javax.swing.JButton consultarBoton;
     private javax.swing.JButton retiroBoton;
     private javax.swing.JButton salirBoton;
     // End of variables declaration//GEN-END:variables
