@@ -3,15 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sistema.presentacion.principal;
-import java.util.Observable;
-import java.util.Observer;
+package sistema.presentacion.Principal;
+
 /**
  *
  * @author ariqq
  */
+import java.util.Observable;
+import java.util.Observer;
+
 public class Model extends Observable{
-        // Model attributes here
+    
+    // Model attributes here
     // Model gets and sets here
 
     @Override
@@ -24,4 +27,5 @@ public class Model extends Observable{
         this.setChanged();
         this.notifyObservers();
     }
+    
 }

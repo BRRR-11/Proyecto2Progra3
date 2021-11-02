@@ -4,56 +4,52 @@
  * and open the template in the editor.
  */
 package sistema.logico;
-//_ArianaQuesada_PabloChavarria_DanielBarrientos
+
+/**
+ *
+ * @author ariqq
+ */
 import java.util.Objects;
-import java.util.logging.Logger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlID;
-import javax.xml.bind.annotation.XmlIDREF;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Cliente {
-    @XmlID
+    @XmlID      
     String nombre;
-    String password;
+    String contraseña;
 
-    public Cliente(){
-        nombre = "";
-        password = "";
+    public Cliente() {
+        this.nombre = "";
+        this.contraseña = "";
     }
-   /* 
-    public Cliente(String ced, String nom){
-        cedula = ced;
-        nombre = nom;
-        password = new Password();
-        canton = new Canton();
-        distrito = new Distrito();
-    }*/
-   public Cliente(String nom, String passw)
-   {
-        nombre = nom;
-        password=passw;
-   }
 
-    public String getNombre(){
+    public Cliente(String nombre, String contraseña) {
+        this.nombre = nombre;
+        this.contraseña = contraseña;
+    }
+
+    public String getNombre() {
         return nombre;
     }
-    public String getPassword(){
-        return password;
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
-    
-    public void setNombre(String nom){
-        nombre = nom;
+
+    public String getContraseña() {
+        return contraseña;
     }
-    public void setPassword(String pass){
-        password = pass;
+
+    public void setContraseña(String contraseña) {
+        this.contraseña = contraseña;
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 17 * hash + Objects.hashCode(this.nombre);
+        int hash = 3;
+        hash = 67 * hash + Objects.hashCode(this.nombre);
         return hash;
     }
 
@@ -74,11 +70,10 @@ public class Cliente {
         }
         return true;
     }
-    
 
     @Override
     public String toString() {
-        return "Cliente{" + ", nombre=" + nombre + ", password=" + password;
+        return nombre;
     }
   
 }

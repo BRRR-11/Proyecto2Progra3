@@ -3,14 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sistema.presentacion.principal;
-
-import sistema.principal.Aplicacion;
+package sistema.presentacion.Principal;
 
 /**
  *
  * @author ariqq
  */
+import sistema.Aplicacion;
+import sistema.logico.Service;
+
 public class Controller {
     Model model;
     ViewPrincipal view;
@@ -34,10 +35,18 @@ public class Controller {
     
     public void exit(){
     }
-    public void claveShow(){
-        this.hide();
-        Aplicacion.CLAVE.show();
-    }
     
-   
+    // Controller methods that respond to View events
+    // probably invoke methods from Service,
+    // and set data to Model, which in turn causes the View to update 
+    
+    /*public void principalShow(){
+        this.hide();
+        Aplicacion.PRINCIPAL.show();
+    }*/
+    
+    /*public void facturasShow(){
+        this.hide();
+        Aplicacion.FACTURAS.show();
+    } */   
 }

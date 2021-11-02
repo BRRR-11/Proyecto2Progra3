@@ -4,18 +4,12 @@
  * and open the template in the editor.
  */
 package sistema.logico;
-
-import Data.Database;
-//import data.XmlPersister;
 import java.util.List;
-import java.util.stream.Collectors;
-
-//_ArianaQuesada_PabloChavarria_DanielBarrientos
-
-import java.util.List;
-import Data.ClienteDao;
-//import Data.FacturaDao;
-
+import sistema.data.ClienteDao;
+/**
+ *
+ * @author ariqq
+ */
 public class Service {
     
     // Singleton implementation
@@ -28,7 +22,6 @@ public class Service {
     }
     
     // Service data
-      //FacturaDao fDao ;
       ClienteDao cDao;
     
 
@@ -38,25 +31,25 @@ public class Service {
         return cDao.read(cedula);
     }
     
-    /*public List<Cliente> clienteSearch(String cedula){
+    public List<Cliente> clienteSearch(String cedula){
         return cDao.findByCedula(cedula);       
     }
     
     public List<Cliente> clienteAll(){
         return cDao.findAll();
-    }*/
+    }
     
     public void clienteAdd(Cliente cliente) throws Exception{
         cDao.create(cliente);
     }    
-    public boolean verificaContraseña(String contras) throws Exception{
+     public boolean verificaContraseña(String contras) throws Exception{
         String contraseña= contras;
         int cant=0;
         int mayus = 0;
         int minus=0;
         int num=0;
     
-        if(contraseña.length()==7)
+        if(contraseña.length()>7)
         {
             cant+=1;
         }
@@ -88,7 +81,7 @@ public class Service {
             }
         }
 
-        if(cant==1&&mayus>1&&minus>1&&num>1)
+        if(cant>=1 && mayus>=1 && minus>=1 && num>=1)
         {
             System.out.println("La contaseña es fuerte");
             return true;
@@ -99,17 +92,4 @@ public class Service {
             return false;
         }
     }
-
-
-    public Service() {
-        try{
-              //fDao = new FacturaDao();
-              cDao= new ClienteDao();
-        }
-        catch(Exception e){
-
-        }
-
-    }
-    
 }

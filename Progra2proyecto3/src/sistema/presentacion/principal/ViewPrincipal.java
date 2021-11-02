@@ -3,16 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sistema.presentacion.principal;
-
+package sistema.presentacion.Principal;
 import java.util.Observable;
-
+import sistema.logico.Cliente;
 /**
  *
  * @author ariqq
  */
-public class ViewPrincipal extends javax.swing.JFrame implements java.util.Observer {
-    
+public class ViewPrincipal extends javax.swing.JFrame implements java.util.Observer{
 //**************  MVC ***********
     Controller controller;
     Model model;
@@ -55,54 +53,45 @@ public class ViewPrincipal extends javax.swing.JFrame implements java.util.Obser
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanelPrincipal = new javax.swing.JPanel();
-        buttonRetiro = new javax.swing.JButton();
-        buttonClave = new javax.swing.JButton();
-        buttonSalir = new javax.swing.JButton();
+        retiroBoton = new javax.swing.JButton();
+        cambioBoton = new javax.swing.JButton();
+        salirBoton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Pantalla Principal");
 
-        jPanelPrincipal.setBackground(new java.awt.Color(0, 51, 51));
-        jPanelPrincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        retiroBoton.setText("Hacer Retiro");
 
-        buttonRetiro.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        buttonRetiro.setForeground(new java.awt.Color(255, 255, 255));
-        buttonRetiro.setText("HACER RETIRO");
-        jPanelPrincipal.add(buttonRetiro, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, 330, 100));
+        cambioBoton.setText("Cambio de Clave");
 
-        buttonClave.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        buttonClave.setForeground(new java.awt.Color(255, 255, 255));
-        buttonClave.setText("CAMBIO DE CLAVE");
-        buttonClave.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonClaveActionPerformed(evt);
-            }
-        });
-        jPanelPrincipal.add(buttonClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 270, 330, 100));
-
-        buttonSalir.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        buttonSalir.setForeground(new java.awt.Color(255, 255, 255));
-        buttonSalir.setText("SALIR");
-        jPanelPrincipal.add(buttonSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 430, 330, 100));
+        salirBoton.setText("Salir");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 890, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(228, 228, 228)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(salirBoton, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(retiroBoton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cambioBoton, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE)))
+                .addContainerGap(257, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 656, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(90, 90, 90)
+                .addComponent(retiroBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(49, 49, 49)
+                .addComponent(cambioBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(salirBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(116, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void buttonClaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonClaveActionPerformed
-        controller.claveShow();
-    }//GEN-LAST:event_buttonClaveActionPerformed
 
     /**
      * @param args the command line arguments
@@ -140,9 +129,8 @@ public class ViewPrincipal extends javax.swing.JFrame implements java.util.Obser
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buttonClave;
-    private javax.swing.JButton buttonRetiro;
-    private javax.swing.JButton buttonSalir;
-    private javax.swing.JPanel jPanelPrincipal;
+    private javax.swing.JButton cambioBoton;
+    private javax.swing.JButton retiroBoton;
+    private javax.swing.JButton salirBoton;
     // End of variables declaration//GEN-END:variables
 }
