@@ -86,17 +86,22 @@ public class Controller {
         
     }
     
-    public void verficarContra(){
+    public boolean verficarContra(){
         try{
-            Service.instance().verificaContraseña(String.valueOf(this.view.passText.getPassword()));
-            model.setCliente(new Cliente("",String.valueOf(this.view.passText.getPassword())));
-            //model.setClientes(Arrays.asList(cliente));
-            model.commit();
-        }
-        catch (Exception ex){
-            
+            if(Service.instance().verificaContraseña(String.valueOf(this.view.passText.getPassword())) == true){
+                Service.instance().verificaContraseña(String.valueOf(this.view.passText.getPassword()));
+                model.setCliente(new Cliente("",String.valueOf(this.view.passText.getPassword())));
+                //model.setClientes(Arrays.asList(cliente));
+                model.commit();
+                return true;
+            }
+            else{
+                return false;
+            }
+        }catch (Exception ex){
+            return false;
         }
     }
     
-    
 }
+

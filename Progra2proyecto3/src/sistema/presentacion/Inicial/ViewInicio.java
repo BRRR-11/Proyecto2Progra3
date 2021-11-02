@@ -122,8 +122,9 @@ public class ViewInicio extends javax.swing.JFrame implements java.util.Observer
     }// </editor-fold>//GEN-END:initComponents
 
     private void agregarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarBotonActionPerformed
-        controller.verficarContra();
-        controller.principalShow();
+        if(controller.verficarContra()==true){
+            controller.principalShow();
+        }
     }//GEN-LAST:event_agregarBotonActionPerformed
 
     /**
