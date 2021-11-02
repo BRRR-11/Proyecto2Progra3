@@ -32,7 +32,7 @@ public class Service {
     }
     
     public List<Cliente> clienteSearch(String cedula){
-        return cDao.findByCedula(cedula);       
+        return cDao.findByUsuario(cedula);       
     }
     
     public List<Cliente> clienteAll(){

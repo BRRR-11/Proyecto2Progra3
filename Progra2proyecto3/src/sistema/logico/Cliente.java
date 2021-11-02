@@ -19,15 +19,22 @@ public class Cliente {
     @XmlID      
     String nombre;
     String contraseña;
+    double saldo;
 
     public Cliente() {
         this.nombre = "";
         this.contraseña = "";
+        this.saldo = 0;
     }
 
     public Cliente(String nombre, String contraseña) {
         this.nombre = nombre;
         this.contraseña = contraseña;
+    }
+    public Cliente(String nombre, String contraseña, double saldo) {
+        this.nombre = nombre;
+        this.contraseña = contraseña;
+        this.saldo = saldo;
     }
 
     public String getNombre() {
@@ -44,6 +51,13 @@ public class Cliente {
 
     public void setContraseña(String contraseña) {
         this.contraseña = contraseña;
+    }
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
     }
 
     @Override
