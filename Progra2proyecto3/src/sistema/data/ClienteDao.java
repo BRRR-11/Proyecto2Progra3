@@ -128,12 +128,10 @@ public class ClienteDao {
         stm.setString(2, contraseña);
         ResultSet rs =  db.executeQuery(stm);
         if (rs.next()) {
-            //Cliente c = from(rs, "c"); 
             return true;
         }
         else{
             return false;
-           // throw new Exception ("Cliente no Existe");
         }        
     }
 }
