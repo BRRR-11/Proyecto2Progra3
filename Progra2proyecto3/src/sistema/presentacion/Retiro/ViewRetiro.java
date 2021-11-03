@@ -36,7 +36,7 @@ public class ViewRetiro extends javax.swing.JFrame implements java.util.Observer
     public void update(Observable o, Object arg) {
         Cliente cliente = model.getCliente();
         //actualPass.setText(cliente.getContraseña());
-        saldoText.setText(String.valueOf(cliente.getSaldo()));
+        //saldoText.setText(String.valueOf(cliente.getSaldo()));
     }
 //************** END MVC ***********
     /**

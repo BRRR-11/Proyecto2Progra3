@@ -24,13 +24,13 @@ public class ClienteDao {
     }
 
     public void create(Cliente c) throws Exception{
-        String sql="insert into cliente (id, nombre, password, saldo) "+
-                "values(?,?,?,?)";
+        String sql="insert into cliente (id, nombre, password) "+
+                "values(?,?,?)";
         PreparedStatement stm = db.prepareStatement(sql);
         stm.setString(1, c.getId());
         stm.setString(2, c.getNombre());
         stm.setString(3, c.getContraseña());
-        stm.setDouble(4, c.getSaldo());
+        //stm.setDouble(4, c.getSaldo());
       
         int count=db.executeUpdate(stm);
         if (count==0){
@@ -52,13 +52,13 @@ public class ClienteDao {
         }
     }
     public void update(Cliente c) throws Exception{
-        String sql="update cliente set nombre=?, password=?, saldo=?"+
+        String sql="update cliente set nombre=?, password=?"+
                 "where id=?";
         PreparedStatement stm = db.prepareStatement(sql);
         stm.setString(1, c.getNombre());
         stm.setString(2, c.getContraseña());
-        stm.setDouble(3, c.getSaldo());
-        stm.setString(4, c.getId());
+        //stm.setDouble(3, c.getSaldo());
+        stm.setString(3, c.getId());
         int count=db.executeUpdate(stm);
         if (count==0){
             throw new Exception("Cliente no existe");
@@ -114,7 +114,7 @@ public class ClienteDao {
             c.setId(rs.getString(alias+".id"));
             c.setNombre(rs.getString(alias+".nombre"));
             c.setContraseña(rs.getString(alias+".contraseña"));
-            c.setSaldo(0); //Revisar
+           // c.setSaldo(0); //Revisar
             return c;
         } catch (SQLException ex) {
             return null;
