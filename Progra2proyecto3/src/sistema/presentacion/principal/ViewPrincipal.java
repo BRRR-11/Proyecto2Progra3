@@ -61,10 +61,25 @@ public class ViewPrincipal extends javax.swing.JFrame implements java.util.Obser
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         retiroBoton.setText("Hacer Retiro");
+        retiroBoton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                retiroBotonActionPerformed(evt);
+            }
+        });
 
         cambioBoton.setText("Cambio de Clave");
+        cambioBoton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cambioBotonActionPerformed(evt);
+            }
+        });
 
         salirBoton.setText("Salir");
+        salirBoton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                salirBotonActionPerformed(evt);
+            }
+        });
 
         consultarBoton.setText("Consultar Saldo");
         consultarBoton.addActionListener(new java.awt.event.ActionListener() {
@@ -106,6 +121,18 @@ public class ViewPrincipal extends javax.swing.JFrame implements java.util.Obser
     private void consultarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultarBotonActionPerformed
         controller.consultarShow();
     }//GEN-LAST:event_consultarBotonActionPerformed
+
+    private void retiroBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_retiroBotonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_retiroBotonActionPerformed
+
+    private void cambioBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cambioBotonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cambioBotonActionPerformed
+
+    private void salirBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirBotonActionPerformed
+        controller.exit();
+    }//GEN-LAST:event_salirBotonActionPerformed
 
     /**
      * @param args the command line arguments

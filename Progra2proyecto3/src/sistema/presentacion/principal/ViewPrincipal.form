@@ -56,16 +56,25 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Hacer Retiro"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="retiroBotonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="cambioBoton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Cambio de Clave"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cambioBotonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="salirBoton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Salir"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="salirBotonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="consultarBoton">
       <Properties>

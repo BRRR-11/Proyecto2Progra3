@@ -32,7 +32,7 @@ public class Controller {
     public void hide(){
         this.view.setVisible(false);
     }
-     public void consultarShow(){
+    public void consultarShow(){
         this.hide();
         Aplicacion.CONSULTAR.show();
     }

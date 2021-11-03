@@ -29,6 +29,16 @@ public class Aplicacion {
         sistema.presentacion.Consultar.Controller controllerConsultar = new sistema.presentacion.Consultar.Controller(modelConsultar,viewConsultar);
         CONSULTAR = controllerConsultar;
         
+        sistema.presentacion.Retiro.Model modelRetiro =new sistema.presentacion.Retiro.Model() ;
+        sistema.presentacion.Retiro.ViewRetiro viewRetiro = new sistema.presentacion.Retiro.ViewRetiro();
+        sistema.presentacion.Retiro.Controller controllerRetiro = new sistema.presentacion.Retiro.Controller(modelRetiro,viewRetiro);
+        RETIRO = controllerRetiro;
+        
+        sistema.presentacion.CambioClave.Model modelCambioClave =new sistema.presentacion.CambioClave.Model() ;
+        sistema.presentacion.CambioClave.ViewCambio viewCambioClave = new sistema.presentacion.CambioClave.ViewCambio();
+        sistema.presentacion.CambioClave.Controller controllerCambioClave = new sistema.presentacion.CambioClave.Controller(modelCambioClave,viewCambioClave);
+        CAMBIO = controllerCambioClave;
+        
         
         INICIO.show();
         System.out.print(" Listo");
@@ -36,4 +46,6 @@ public class Aplicacion {
     public static sistema.presentacion.Inicial.Controller INICIO;
     public static sistema.presentacion.Principal.Controller PRINCIPAL;
     public static sistema.presentacion.Consultar.Controller CONSULTAR;
+    public static sistema.presentacion.Retiro.Controller RETIRO;
+    public static sistema.presentacion.CambioClave.Controller CAMBIO;
 }
