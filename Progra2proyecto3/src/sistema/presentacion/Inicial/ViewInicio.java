@@ -123,6 +123,7 @@ public class ViewInicio extends javax.swing.JFrame implements java.util.Observer
     private void agregarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarBotonActionPerformed
         if(controller.verficarContra()==true){
             if(controller.validarUsuario(String.valueOf(usuarioText.getText()), String.valueOf(passText.getPassword()))){
+                //controller.clienteGet(usuarioText.getText());
                 controller.principalShow();
             }
         }

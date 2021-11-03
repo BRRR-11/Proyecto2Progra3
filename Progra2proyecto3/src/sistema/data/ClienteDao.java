@@ -113,7 +113,7 @@ public class ClienteDao {
             Cliente c= new Cliente();
             c.setId(rs.getString(alias+".id"));
             c.setNombre(rs.getString(alias+".nombre"));
-            c.setContraseña(rs.getString(alias+".contraseña"));
+            c.setContraseña(rs.getString(alias+".password"));
            // c.setSaldo(0); //Revisar
             return c;
         } catch (SQLException ex) {
@@ -122,13 +122,13 @@ public class ClienteDao {
     }   
     
     public boolean validarUsuario(String usuario, String contraseña) throws Exception{
-        String sql = "select id, nombre from cliente c where nombre=?, password=?";
+        String sql = "select id, nombre from cliente where nombre=? and password=?";
         PreparedStatement stm = db.prepareStatement(sql);
         stm.setString(1, usuario);
         stm.setString(2, contraseña);
         ResultSet rs =  db.executeQuery(stm);
         if (rs.next()) {
-            Cliente c = from(rs, "c"); 
+            //Cliente c = from(rs, "c"); 
             return true;
         }
         else{
