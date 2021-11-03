@@ -17,44 +17,44 @@ import javax.xml.bind.annotation.XmlID;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Cliente {
     @XmlID    
-    String id;        
-    String nombre;
+    String ced;        
+    String usuario;
     String contraseña;
-    double saldo;
+    double cantidad;
 
     public Cliente() {
-        this.id = "";
-        this.nombre = "";
+        this.ced = "";
+        this.usuario = "";
         this.contraseña = "";
-        this.saldo = 0;
+        this.cantidad = 0;
     }
 
     public Cliente(String id,String nombre, String contraseña) {
-        this.id = id;
-        this.nombre = nombre;
+        this.ced = id;
+        this.usuario = nombre;
         this.contraseña = contraseña;
     }
     public Cliente(String id,String nombre, String contraseña, double saldo) {
-        this.id = id;
-        this.nombre = nombre;
+        this.ced = id;
+        this.usuario = nombre;
         this.contraseña = contraseña;
-        this.saldo = saldo;
+        this.cantidad = saldo;
     }
 
     public String getId() {
-        return id;
+        return ced;
     }
 
     public void setId(String id) {
-        this.id = id;
+        this.ced = id;
     }
  
     public String getNombre() {
-        return nombre;
+        return usuario;
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        this.usuario = nombre;
     }
 
     public String getContraseña() {
@@ -65,17 +65,17 @@ public class Cliente {
         this.contraseña = contraseña;
     }
     public double getSaldo() {
-        return saldo;
+        return cantidad;
     }
 
     public void setSaldo(double saldo) {
-        this.saldo = saldo;
+        this.cantidad = saldo;
     }
 
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 67 * hash + Objects.hashCode(this.id);
+        hash = 67 * hash + Objects.hashCode(this.ced);
         return hash;
     }
 
@@ -91,7 +91,7 @@ public class Cliente {
             return false;
         }
         final Cliente other = (Cliente) obj;
-        if (!Objects.equals(this.id, other.id)) {
+        if (!Objects.equals(this.ced, other.ced)) {
             return false;
         }
         return true;
@@ -99,7 +99,7 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return nombre;
+        return usuario;
     }
   
 }
