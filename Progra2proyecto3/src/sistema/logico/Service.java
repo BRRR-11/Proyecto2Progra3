@@ -102,4 +102,13 @@ public class Service {
         }
             
     }
+    public Service() {
+        try{
+            cDao= new ClienteDao();
+        }
+        catch(Exception e){
+
+        }
+
+    }
 }

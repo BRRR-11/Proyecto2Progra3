@@ -24,7 +24,7 @@ public class ClienteDao {
     }
 
     public void create(Cliente c) throws Exception{
-        String sql="insert into cliente (id, nombre, contraseña, saldo) "+
+        String sql="insert into cliente (id, nombre, password, saldo) "+
                 "values(?,?,?,?)";
         PreparedStatement stm = db.prepareStatement(sql);
         stm.setString(1, c.getId());
@@ -52,7 +52,7 @@ public class ClienteDao {
         }
     }
     public void update(Cliente c) throws Exception{
-        String sql="update cliente set nombre=?, contraseña=?, saldo=?"+
+        String sql="update cliente set nombre=?, password=?, saldo=?"+
                 "where id=?";
         PreparedStatement stm = db.prepareStatement(sql);
         stm.setString(1, c.getNombre());

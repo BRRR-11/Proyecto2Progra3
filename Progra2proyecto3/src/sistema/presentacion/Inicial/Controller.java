@@ -90,7 +90,7 @@ public class Controller {
         try{
             if(Service.instance().verificaContraseña(String.valueOf(this.view.passText.getPassword())) == true){
                 Service.instance().verificaContraseña(String.valueOf(this.view.passText.getPassword()));
-                model.setCliente(new Cliente("","",String.valueOf(this.view.passText.getPassword())));
+                //model.setCliente(new Cliente("","",String.valueOf(this.view.passText.getPassword())));
                 //model.setClientes(Arrays.asList(cliente));
                 model.commit();
                 return true;
