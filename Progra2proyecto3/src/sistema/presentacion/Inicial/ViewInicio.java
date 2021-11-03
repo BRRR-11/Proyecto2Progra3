@@ -35,8 +35,8 @@ public class ViewInicio extends javax.swing.JFrame implements java.util.Observer
     @Override
     public void update(Observable o, Object arg) {
         Cliente cliente = model.getCliente();
-        usuarioText.setText(cliente.getNombre());
-        passText.setText(cliente.getContraseña());  
+        //usuarioText.setText(cliente.getNombre());
+        //passText.setText(cliente.getContraseña());  
     }
 //************** END MVC ***********
     /**
@@ -122,7 +122,7 @@ public class ViewInicio extends javax.swing.JFrame implements java.util.Observer
 
     private void agregarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarBotonActionPerformed
         if(controller.verficarContra()==true){
-            if(controller.validarUsuario(usuarioText.getText(), String.valueOf(passText.getPassword()))){
+            if(controller.validarUsuario(String.valueOf(usuarioText.getText()), String.valueOf(passText.getPassword()))){
                 controller.principalShow();
             }
         }
