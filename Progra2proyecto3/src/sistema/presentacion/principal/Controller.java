@@ -45,6 +45,8 @@ public class Controller {
         Aplicacion.CAMBIO.show();
     }
     public void exit(){
+        this.view.setVisible(false);
+        
     }
     
     // Controller methods that respond to View events
