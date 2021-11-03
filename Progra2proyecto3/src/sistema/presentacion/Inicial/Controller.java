@@ -104,6 +104,24 @@ public class Controller {
             return false;
         }
     }
+    public boolean validarUsuario(String usuario, String contraseña){
+        try{
+            if(Service.instance().validarUsuario(usuario, contraseña) == true){
+                Service.instance().validarUsuario(usuario, contraseña);
+                model.setCliente(new Cliente("", usuario, contraseña));
+                model.commit();
+                return true;
+            }
+            else{
+                JOptionPane.showMessageDialog(null,"La contraseña o usuario es incorrecta");
+                return false;
+            }
+            
+        }catch (Exception ex){
+            JOptionPane.showMessageDialog(null,"La contraseña o usuario es incorrecta");
+            return false;
+        }
+    }
     
 }
 

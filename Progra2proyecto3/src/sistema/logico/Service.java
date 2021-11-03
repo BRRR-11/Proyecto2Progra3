@@ -92,7 +92,14 @@ public class Service {
             return false;
         }
     }
-     public void hacerRetiro(double reti){
-         
-     }
+    public boolean validarUsuario(String usuario, String contraseña) throws Exception{
+        if(cDao.validarUsuario(usuario, contraseña)==true){
+            cDao.validarUsuario(usuario, contraseña);
+            return true;
+        }
+        else{
+            return false;
+        }
+            
+    }
 }

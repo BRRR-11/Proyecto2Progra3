@@ -122,7 +122,9 @@ public class ViewInicio extends javax.swing.JFrame implements java.util.Observer
 
     private void agregarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarBotonActionPerformed
         if(controller.verficarContra()==true){
-            controller.principalShow();
+            if(controller.validarUsuario(usuarioText.getText(), String.valueOf(passText.getPassword()))){
+                controller.principalShow();
+            }
         }
     }//GEN-LAST:event_agregarBotonActionPerformed
 
@@ -167,7 +169,7 @@ public class ViewInicio extends javax.swing.JFrame implements java.util.Observer
     private javax.swing.JLabel passLabel;
     public javax.swing.JPasswordField passText;
     private javax.swing.JLabel usuarioLabel;
-    private javax.swing.JTextField usuarioText;
+    public javax.swing.JTextField usuarioText;
     // End of variables declaration//GEN-END:variables
 
  

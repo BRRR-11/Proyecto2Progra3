@@ -121,7 +121,19 @@ public class ClienteDao {
         }
     }   
     
-    public void validarUsuario(){
-        
+    public boolean validarUsuario(String usuario, String contraseña) throws Exception{
+        String sql = "select id, nombre from cliente c where nombre=?, password=?";
+        PreparedStatement stm = db.prepareStatement(sql);
+        stm.setString(1, usuario);
+        stm.setString(2, contraseña);
+        ResultSet rs =  db.executeQuery(stm);
+        if (rs.next()) {
+            Cliente c = from(rs, "c"); 
+            return true;
+        }
+        else{
+            return false;
+           // throw new Exception ("Cliente no Existe");
+        }        
     }
 }
