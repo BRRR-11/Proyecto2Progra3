@@ -46,20 +46,5 @@ public class Controller {
     }
     public void exit(){
         this.view.setVisible(false);
-        
     }
-    
-    // Controller methods that respond to View events
-    // probably invoke methods from Service,
-    // and set data to Model, which in turn causes the View to update 
-    
-    /*public void principalShow(){
-        this.hide();
-        Aplicacion.PRINCIPAL.show();
-    }*/
-    
-    /*public void facturasShow(){
-        this.hide();
-        Aplicacion.FACTURAS.show();
-    } */   
 }
