@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sistema.presentacion.Consultar;
+package sistema.presentacion.CambioClave;
 
 /**
  *
@@ -18,9 +18,9 @@ import sistema.logico.Service;
 
 public class Controller {
     Model model;
-    ViewConsultar view;
+    ViewCambio view;
 
-    public Controller(Model model, ViewConsultar view) {
+    public Controller(Model model, ViewCambio view) {
         this.model = model;
         this.view = view;
         // invoke Model sets for initialization before linking to the view

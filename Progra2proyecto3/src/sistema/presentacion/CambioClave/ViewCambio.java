@@ -4,13 +4,40 @@
  * and open the template in the editor.
  */
 package sistema.presentacion.CambioClave;
-
+import java.util.Observable;
+import sistema.logico.Cliente;
 /**
  *
  * @author ariqq
  */
-public class ViewCambio extends javax.swing.JFrame {
+public class ViewCambio extends javax.swing.JFrame implements java.util.Observer{
+//**************  MVC ***********
+    Controller controller;
+    Model model;
+    
+    public void setController(Controller controller){
+        this.controller=controller;
+    }
 
+    public Controller getController() {
+        return controller;
+    }
+    
+    public void setModel(Model model){
+        this.model=model;
+         model.addObserver(this);
+    }
+
+    public Model getModel() {
+        return model;
+    }
+    
+    @Override
+    public void update(Observable o, Object arg) {
+        Cliente cliente = model.getCliente();
+        actualPass.setText(cliente.getContraseña());
+    }
+//************** END MVC ***********
     /**
      * Creates new form ViewCambio
      */
