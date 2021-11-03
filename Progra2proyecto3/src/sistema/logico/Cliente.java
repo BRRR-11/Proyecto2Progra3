@@ -16,27 +16,39 @@ import javax.xml.bind.annotation.XmlID;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Cliente {
-    @XmlID      
+    @XmlID    
+    String id;        
     String nombre;
     String contraseña;
     double saldo;
 
     public Cliente() {
+        this.id = "";
         this.nombre = "";
         this.contraseña = "";
         this.saldo = 0;
     }
 
-    public Cliente(String nombre, String contraseña) {
+    public Cliente(String id,String nombre, String contraseña) {
+        this.id = id;
         this.nombre = nombre;
         this.contraseña = contraseña;
     }
-    public Cliente(String nombre, String contraseña, double saldo) {
+    public Cliente(String id,String nombre, String contraseña, double saldo) {
+        this.id = id;
         this.nombre = nombre;
         this.contraseña = contraseña;
         this.saldo = saldo;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+ 
     public String getNombre() {
         return nombre;
     }
@@ -63,7 +75,7 @@ public class Cliente {
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 67 * hash + Objects.hashCode(this.nombre);
+        hash = 67 * hash + Objects.hashCode(this.id);
         return hash;
     }
 
@@ -79,7 +91,7 @@ public class Cliente {
             return false;
         }
         final Cliente other = (Cliente) obj;
-        if (!Objects.equals(this.nombre, other.nombre)) {
+        if (!Objects.equals(this.id, other.id)) {
             return false;
         }
         return true;

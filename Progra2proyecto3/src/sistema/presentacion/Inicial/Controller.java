@@ -61,9 +61,9 @@ public class Controller {
         }
     }
     
-    public void  clienteSearch(String nombre){
-        List<Cliente> clientes= Service.instance().clienteSearch(nombre);
-        model.setCliente(new Cliente(nombre,""));
+    public void  clienteSearch(String id){
+        List<Cliente> clientes= Service.instance().clienteSearch(id);
+        model.setCliente(new Cliente(id,"",""));
         model.setClientes(clientes);
         model.commit();
     }
@@ -77,7 +77,7 @@ public class Controller {
     public void clienteAdd(Cliente cliente){
         try {
             Service.instance().clienteAdd(cliente);
-            model.setCliente(new Cliente("",""));
+            model.setCliente(new Cliente("","",""));
             model.setClientes(Arrays.asList(cliente));
             model.commit();
         } catch (Exception ex) {
@@ -90,7 +90,7 @@ public class Controller {
         try{
             if(Service.instance().verificaContraseña(String.valueOf(this.view.passText.getPassword())) == true){
                 Service.instance().verificaContraseña(String.valueOf(this.view.passText.getPassword()));
-                model.setCliente(new Cliente("",String.valueOf(this.view.passText.getPassword())));
+                model.setCliente(new Cliente("","",String.valueOf(this.view.passText.getPassword())));
                 //model.setClientes(Arrays.asList(cliente));
                 model.commit();
                 return true;

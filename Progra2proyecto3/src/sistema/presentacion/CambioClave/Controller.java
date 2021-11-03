@@ -58,9 +58,9 @@ public class Controller {
         }
     }
     
-    public void  clienteSearch(String nombre){
-        List<Cliente> clientes= Service.instance().clienteSearch(nombre);
-        model.setCliente(new Cliente(nombre,""));
+    public void  clienteSearch(String id){
+        List<Cliente> clientes= Service.instance().clienteSearch(id);
+        model.setCliente(new Cliente(id,"",""));
         model.setClientes(clientes);
         model.commit();
     }

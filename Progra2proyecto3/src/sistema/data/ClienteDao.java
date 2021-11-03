@@ -24,12 +24,13 @@ public class ClienteDao {
     }
 
     public void create(Cliente c) throws Exception{
-        String sql="insert into cliente (nombre, contraseña, saldo) "+
-                "values(?,?,?)";
+        String sql="insert into cliente (id, nombre, contraseña, saldo) "+
+                "values(?,?,?,?)";
         PreparedStatement stm = db.prepareStatement(sql);
-        stm.setString(1, c.getNombre());
-        stm.setString(2, c.getContraseña());
-        stm.setDouble(3, c.getSaldo());
+        stm.setString(1, c.getId());
+        stm.setString(2, c.getNombre());
+        stm.setString(3, c.getContraseña());
+        stm.setDouble(4, c.getSaldo());
       
         int count=db.executeUpdate(stm);
         if (count==0){
@@ -37,10 +38,10 @@ public class ClienteDao {
         }
     }
     
-    public Cliente read(String nombre) throws Exception{
-        String sql="select * from Cliente c where nombre=?";
+    public Cliente read(String id) throws Exception{
+        String sql="select * from Cliente c where id=?";
         PreparedStatement stm = db.prepareStatement(sql);
-        stm.setString(1, nombre);
+        stm.setString(1, id);
         ResultSet rs =  db.executeQuery(stm);
         if (rs.next()) {
             Cliente c = from(rs, "c"); 
@@ -51,12 +52,13 @@ public class ClienteDao {
         }
     }
     public void update(Cliente c) throws Exception{
-        String sql="update cliente set contraseña=?, saldo=?"+
-                "where nombre=?";
+        String sql="update cliente set nombre=?, contraseña=?, saldo=?"+
+                "where id=?";
         PreparedStatement stm = db.prepareStatement(sql);
-        stm.setString(1, c.getContraseña());
-        stm.setDouble(2, c.getSaldo());
-        stm.setString(3, c.getNombre());
+        stm.setString(1, c.getNombre());
+        stm.setString(2, c.getContraseña());
+        stm.setDouble(3, c.getSaldo());
+        stm.setString(4, c.getId());
         int count=db.executeUpdate(stm);
         if (count==0){
             throw new Exception("Cliente no existe");
@@ -64,9 +66,9 @@ public class ClienteDao {
     }
 
     public void delete(Cliente c) throws Exception{
-        String sql="delete from cliente where nombre=?";
+        String sql="delete from cliente where id=?";
         PreparedStatement stm = db.prepareStatement(sql);
-        stm.setString(1, c.getNombre());
+        stm.setString(1, c.getId());
         int count=db.executeUpdate(stm);
         if (count==0){
             throw new Exception("Cliente no existe");
@@ -89,13 +91,13 @@ public class ClienteDao {
         return resultado;        
     }
 
-    public List<Cliente> findByUsuario(String nombre){
+    public List<Cliente> findByUsuario(String id){
         List<Cliente> resultado = new ArrayList<>();
         try {
             String sql="select * from cliente c "+
-                    "where c.nombre like ?";            
+                    "where c.id like ?";            
             PreparedStatement stm = db.prepareStatement(sql);
-            stm.setString(1, nombre+"%");
+            stm.setString(1, id+"%");
             ResultSet rs =  db.executeQuery(stm); 
             Cliente c;
             while (rs.next()) {
@@ -109,6 +111,7 @@ public class ClienteDao {
     public Cliente from(ResultSet rs, String alias){
         try {
             Cliente c= new Cliente();
+            c.setId(rs.getString(alias+".id"));
             c.setNombre(rs.getString(alias+".nombre"));
             c.setContraseña(rs.getString(alias+".contraseña"));
             c.setSaldo(0); //Revisar
@@ -116,5 +119,9 @@ public class ClienteDao {
         } catch (SQLException ex) {
             return null;
         }
-    }    
+    }   
+    
+    public void validarUsuario(){
+        
+    }
 }
