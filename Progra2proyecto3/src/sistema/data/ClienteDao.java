@@ -39,7 +39,7 @@ public class ClienteDao {
     }
     
     public Cliente read(String id) throws Exception{
-        String sql="select * from Cliente c where id=?";
+        String sql="select * from cliente c where id=?";
         PreparedStatement stm = db.prepareStatement(sql);
         stm.setString(1, id);
         ResultSet rs =  db.executeQuery(stm);
