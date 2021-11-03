@@ -77,6 +77,11 @@ public class ViewCambio extends javax.swing.JFrame implements java.util.Observer
         aceptarBoton.setText("Aceptar");
 
         regresarBoton.setText("Regresar");
+        regresarBoton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                regresarBotonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -130,6 +135,10 @@ public class ViewCambio extends javax.swing.JFrame implements java.util.Observer
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void regresarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regresarBotonActionPerformed
+        controller.hide();
+    }//GEN-LAST:event_regresarBotonActionPerformed
 
     /**
      * @param args the command line arguments

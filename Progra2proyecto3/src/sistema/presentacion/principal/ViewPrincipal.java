@@ -123,15 +123,15 @@ public class ViewPrincipal extends javax.swing.JFrame implements java.util.Obser
     }//GEN-LAST:event_consultarBotonActionPerformed
 
     private void retiroBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_retiroBotonActionPerformed
-        // TODO add your handling code here:
+        controller.retirarShow();
     }//GEN-LAST:event_retiroBotonActionPerformed
 
     private void cambioBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cambioBotonActionPerformed
-        // TODO add your handling code here:
+        controller.cambioShow();
     }//GEN-LAST:event_cambioBotonActionPerformed
 
     private void salirBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirBotonActionPerformed
-        controller.exit();
+        
     }//GEN-LAST:event_salirBotonActionPerformed
 
     /**

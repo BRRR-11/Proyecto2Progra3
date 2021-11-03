@@ -78,6 +78,11 @@ public class ViewRetiro extends javax.swing.JFrame implements java.util.Observer
         agregarBotonRetiro.setText("Agregar");
 
         regresarBotonRetiro.setText("Regresar");
+        regresarBotonRetiro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                regresarBotonRetiroActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -131,6 +136,10 @@ public class ViewRetiro extends javax.swing.JFrame implements java.util.Observer
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void regresarBotonRetiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regresarBotonRetiroActionPerformed
+        controller.hide();
+    }//GEN-LAST:event_regresarBotonRetiroActionPerformed
 
     /**
      * @param args the command line arguments

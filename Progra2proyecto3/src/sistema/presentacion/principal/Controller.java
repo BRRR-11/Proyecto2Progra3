@@ -36,7 +36,14 @@ public class Controller {
         this.hide();
         Aplicacion.CONSULTAR.show();
     }
-    
+     public void retirarShow(){
+        this.hide();
+        Aplicacion.RETIRO.show();
+    }
+     public void cambioShow(){
+        this.hide();
+        Aplicacion.CAMBIO.show();
+    }
     public void exit(){
     }
     
