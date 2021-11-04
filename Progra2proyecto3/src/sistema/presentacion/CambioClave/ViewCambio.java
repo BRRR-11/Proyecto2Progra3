@@ -159,7 +159,7 @@ public class ViewCambio extends javax.swing.JFrame implements java.util.Observer
 
     private void aceptarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarBotonActionPerformed
         if(controller.verficarContra()== true){
-            if(Aplicacion.INICIO.contraseñaText()==actualPass.getText()){
+            if(controller.validarContraseña(String.valueOf(actualPass.getPassword()))){
                 controller.modificarContraseña(String.valueOf(usuarioTextCambio.getText()),String.valueOf(nuevaPass.getPassword()));
             }
             else{

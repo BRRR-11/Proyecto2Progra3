@@ -145,7 +145,7 @@ public class Controller {
                 model.commit();
             
         }catch (Exception ex){
-            JOptionPane.showMessageDialog(null,"La contraseña es incorrecta");
+            //JOptionPane.showMessageDialog(null,"La contraseña es incorrecta");
         }
         
     }
