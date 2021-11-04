@@ -102,11 +102,11 @@ public class Controller {
                 return true;
             }
             else{
-                JOptionPane.showMessageDialog(null,"La contraseña es debil");
+                JOptionPane.showMessageDialog(null,"La contraseña no es segura");
                 return false;
             }
         }catch (Exception ex){
-            JOptionPane.showMessageDialog(null,"La contraseña es incorrecta");
+            JOptionPane.showMessageDialog(null,"La contraseña no es segura");
             return false;
         }
     }

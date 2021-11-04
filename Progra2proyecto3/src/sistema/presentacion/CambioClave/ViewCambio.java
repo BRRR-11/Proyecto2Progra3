@@ -165,7 +165,7 @@ public class ViewCambio extends javax.swing.JFrame implements java.util.Observer
                     actualPass.setText("");
                     nuevaPass.setText("");
                     confirmarPass.setText("");
-                    JOptionPane.showMessageDialog(null,"La contraseña se cambió con exito");
+                    JOptionPane.showMessageDialog(null,"Clave modificada exitosamente");
                 }
                 else{
                     JOptionPane.showMessageDialog(null,"La contraseña no coincide");
