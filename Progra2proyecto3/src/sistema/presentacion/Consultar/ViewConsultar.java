@@ -36,7 +36,8 @@ public class ViewConsultar extends javax.swing.JFrame implements java.util.Obser
     public void update(Observable o, Object arg) {
         Cliente cliente = model.getCliente();
         usuarioConsulText.setText(cliente.getNombre());
-        passConsulText.setText(cliente.getContraseña());  
+        passConsulText.setText(cliente.getContraseña());
+        saldoConsulText.setText(String.valueOf(cliente.getSaldo()));
     }
 //************** END MVC ***********
     /**
