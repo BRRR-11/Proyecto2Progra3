@@ -45,14 +45,15 @@ public class Controller {
         this.view.usuarioTextCambio.setText(usuario);
     }
     /*public boolean validarContraseñaC(String contraseña){
-        if(this.view.actualPass.getText()== contraseña){
-            return true;
-        }
-        else{
-            JOptionPane.showMessageDialog(null,"La contraseña actual es incorrecta");
-            return false;
-        }
+       if(this.view.actualPass.getText() == contraseña){
+           return true;
+       }
+       else{
+           return false;
+       }
+        
     }*/
+    
     
     // Controller methods that respond to View events
     // probably invoke methods from Service,

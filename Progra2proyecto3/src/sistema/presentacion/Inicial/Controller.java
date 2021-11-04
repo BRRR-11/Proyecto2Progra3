@@ -39,13 +39,17 @@ public class Controller {
         this.view.setVisible(false);
         //Aplicacion.INICIO.show();
     }   
-    public void principalShow(String usuario){
+    public void principalShow(String usuario, String contraseña){
         this.hide();
         Aplicacion.PRINCIPAL.show();
         Aplicacion.CAMBIO.setearUsuario(usuario);
         //Aplicacion.CAMBIO.validarContraseñaC(contraseña);
     }
     
+    public String contraseñaText(){
+        String actual = this.view.passText.getText();
+        return actual;
+    }
     // Controller methods that respond to View events
     // probably invoke methods from Service,
     // and set data to Model, which in turn causes the View to update 
