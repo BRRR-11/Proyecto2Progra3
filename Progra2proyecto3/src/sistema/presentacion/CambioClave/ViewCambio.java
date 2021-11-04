@@ -35,7 +35,7 @@ public class ViewCambio extends javax.swing.JFrame implements java.util.Observer
     @Override
     public void update(Observable o, Object arg) {
         Cliente cliente = model.getCliente();
-        actualPass.setText(cliente.getContraseña());
+        //actualPass.setText(cliente.getContraseña());
     }
 //************** END MVC ***********
     /**
