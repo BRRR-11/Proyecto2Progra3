@@ -134,4 +134,14 @@ public class ClienteDao {
             return false;
         }        
     }
+    public void modificarContraseña(String contraseña) throws Exception{
+        String sql="update cliente set password=?"+
+                "where id=?";
+        PreparedStatement stm = db.prepareStatement(sql);
+        stm.setString(1, contraseña);
+        int count=db.executeUpdate(stm);
+        if (count==0){
+            throw new Exception("Cliente no existe");
+        }        
+    }
 }
