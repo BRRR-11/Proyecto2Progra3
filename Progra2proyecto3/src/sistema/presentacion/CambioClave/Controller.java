@@ -44,6 +44,15 @@ public class Controller {
     public void setearUsuario(String usuario){
         this.view.usuarioTextCambio.setText(usuario);
     }
+    public boolean validarContraseñaC(String contraseña){
+        if(this.view.actualPass.getText()== contraseña){
+            return true;
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"La contraseña actual es incorrecta");
+            return false;
+        }
+    }
     
     // Controller methods that respond to View events
     // probably invoke methods from Service,
@@ -92,11 +101,30 @@ public class Controller {
             return false;
         }
     }
+    public boolean validarContraseña(String contraseña){
+        try{
+            if(Service.instance().validarContraseña(contraseña) == true){
+                Service.instance().validarContraseña(contraseña);
+                model.setCliente(new Cliente("",contraseña));
+                model.commit();
+                return true;
+            }
+            else{
+                JOptionPane.showMessageDialog(null,"La contraseña es incorrecta");
+                return false;
+            }
+            
+        }catch (Exception ex){
+            JOptionPane.showMessageDialog(null,"La contraseña es incorrecta");
+            return false;
+        }
+    }
     public void modificarContraseña(String usuario, String contraseña){
         try{
-            Service.instance().modificarContraseña(usuario, contraseña);
-            model.setCliente(new Cliente("",contraseña));
-            model.commit();
+                Service.instance().modificarContraseña(usuario, contraseña);
+                model.setCliente(new Cliente("",contraseña));
+                model.commit();
+            
         }catch (Exception ex){
             JOptionPane.showMessageDialog(null,"La contraseña es incorrecta");
         }

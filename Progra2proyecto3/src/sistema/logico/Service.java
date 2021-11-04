@@ -102,6 +102,16 @@ public class Service {
         }
             
     }
+    public boolean validarContraseña(String contraseña) throws Exception{
+        if(cDao.validarContraseña(contraseña)==true){
+            cDao.validarContraseña(contraseña);
+            return true;
+        }
+        else{
+            return false;
+        }
+            
+    }
     public Service() {
         try{
             cDao= new ClienteDao();

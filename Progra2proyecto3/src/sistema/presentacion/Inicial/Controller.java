@@ -39,10 +39,11 @@ public class Controller {
         this.view.setVisible(false);
         //Aplicacion.INICIO.show();
     }   
-    public void principalShow(String usuario){
+    public void principalShow(String usuario, String contraseña){
         this.hide();
         Aplicacion.PRINCIPAL.show();
         Aplicacion.CAMBIO.setearUsuario(usuario);
+        Aplicacion.CAMBIO.validarContraseñaC(contraseña);
     }
     
     // Controller methods that respond to View events

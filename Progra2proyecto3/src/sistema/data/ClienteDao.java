@@ -134,6 +134,18 @@ public class ClienteDao {
             return false;
         }        
     }
+      public boolean validarContraseña(String contraseña) throws Exception{
+        String sql = "select nombre from cliente where password=?";
+        PreparedStatement stm = db.prepareStatement(sql);
+        stm.setString(1, contraseña);
+        ResultSet rs =  db.executeQuery(stm);
+        if (rs.next()) {
+            return true;
+        }
+        else{
+            return false;
+        }        
+    }
     public void modificarContraseña(String usuario,String contraseña) throws Exception{
         String sql="update cliente set password=?"+
                 "where nombre=?";

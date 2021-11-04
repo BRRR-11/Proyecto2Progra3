@@ -157,7 +157,9 @@ public class ViewCambio extends javax.swing.JFrame implements java.util.Observer
 
     private void aceptarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarBotonActionPerformed
         if(controller.verficarContra()== true){
-            controller.modificarContraseña(String.valueOf(usuarioTextCambio.getText()), String.valueOf(nuevaPass.getPassword()));
+            if(controller.validarContraseñaC(String.valueOf(actualPass.getPassword()))==true){
+                controller.modificarContraseña(String.valueOf(usuarioTextCambio.getText()),String.valueOf(nuevaPass.getPassword()));
+            }
         }
     }//GEN-LAST:event_aceptarBotonActionPerformed
 
@@ -199,7 +201,7 @@ public class ViewCambio extends javax.swing.JFrame implements java.util.Observer
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton aceptarBoton;
     private javax.swing.JLabel actualLabel;
-    private javax.swing.JPasswordField actualPass;
+    public javax.swing.JPasswordField actualPass;
     private javax.swing.JLabel confirmarLabel;
     private javax.swing.JPasswordField confirmarPass;
     private javax.swing.JButton limpiarBoton;
