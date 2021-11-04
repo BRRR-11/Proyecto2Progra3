@@ -124,7 +124,7 @@ public class ViewInicio extends javax.swing.JFrame implements java.util.Observer
         if(controller.verficarContra()==true){
             if(controller.validarUsuario(String.valueOf(usuarioText.getText()), String.valueOf(passText.getPassword()))){
                 //controller.clienteGet(usuarioText.getText());
-                controller.principalShow();
+                controller.principalShow(String.valueOf(usuarioText.getText()));
             }
         }
     }//GEN-LAST:event_agregarBotonActionPerformed

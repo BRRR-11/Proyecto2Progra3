@@ -12,6 +12,7 @@ package sistema.presentacion.CambioClave;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import javax.swing.JOptionPane;
 import sistema.Aplicacion;
 import sistema.logico.Cliente;
 import sistema.logico.Service;
@@ -40,6 +41,9 @@ public class Controller {
         this.view.setVisible(false);
         Aplicacion.PRINCIPAL.show();
     }    
+    public void setearUsuario(String usuario){
+        this.view.usuarioTextCambio.setText(usuario);
+    }
     
     // Controller methods that respond to View events
     // probably invoke methods from Service,
@@ -69,5 +73,33 @@ public class Controller {
         Cliente cliente = model.getClientes().get(row);
         model.setCliente(cliente);
         model.commit();
+    }
+    public boolean verficarContra(){
+        try{
+            if(Service.instance().verificaContraseña(String.valueOf(this.view.nuevaPass.getPassword())) == true){
+                Service.instance().verificaContraseña(String.valueOf(this.view.nuevaPass.getPassword()));
+                //model.setCliente(new Cliente("","",String.valueOf(this.view.passText.getPassword())));
+                //model.setClientes(Arrays.asList(cliente));
+                model.commit();
+                return true;
+            }
+            else{
+                JOptionPane.showMessageDialog(null,"La contraseña es debil");
+                return false;
+            }
+        }catch (Exception ex){
+            JOptionPane.showMessageDialog(null,"La contraseña es incorrecta");
+            return false;
+        }
+    }
+    public void modificarContraseña(String usuario, String contraseña){
+        try{
+            Service.instance().modificarContraseña(usuario, contraseña);
+            model.setCliente(new Cliente("",contraseña));
+            model.commit();
+        }catch (Exception ex){
+            JOptionPane.showMessageDialog(null,"La contraseña es incorrecta");
+        }
+        
     }
 }

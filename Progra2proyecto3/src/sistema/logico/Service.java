@@ -111,4 +111,7 @@ public class Service {
         }
 
     }
+    public void modificarContraseña(String usuario, String contraseña)throws Exception{
+        cDao.modificarContraseña(usuario, contraseña);
+    }
 }

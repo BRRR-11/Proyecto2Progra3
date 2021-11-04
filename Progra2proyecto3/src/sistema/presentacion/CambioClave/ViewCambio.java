@@ -63,6 +63,8 @@ public class ViewCambio extends javax.swing.JFrame implements java.util.Observer
         limpiarBoton = new javax.swing.JButton();
         aceptarBoton = new javax.swing.JButton();
         regresarBoton = new javax.swing.JButton();
+        usuarioLabelCambio = new javax.swing.JLabel();
+        usuarioTextCambio = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -75,6 +77,11 @@ public class ViewCambio extends javax.swing.JFrame implements java.util.Observer
         limpiarBoton.setText("Limpiar");
 
         aceptarBoton.setText("Aceptar");
+        aceptarBoton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aceptarBotonActionPerformed(evt);
+            }
+        });
 
         regresarBoton.setText("Regresar");
         regresarBoton.addActionListener(new java.awt.event.ActionListener() {
@@ -82,6 +89,8 @@ public class ViewCambio extends javax.swing.JFrame implements java.util.Observer
                 regresarBotonActionPerformed(evt);
             }
         });
+
+        usuarioLabelCambio.setText("Usuario");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -94,7 +103,8 @@ public class ViewCambio extends javax.swing.JFrame implements java.util.Observer
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(actualLabel)
                             .addComponent(nuevaLabel)
-                            .addComponent(confirmarLabel)))
+                            .addComponent(confirmarLabel)
+                            .addComponent(usuarioLabelCambio)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(129, 129, 129)
                         .addComponent(limpiarBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -104,16 +114,21 @@ public class ViewCambio extends javax.swing.JFrame implements java.util.Observer
                         .addComponent(aceptarBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(85, 85, 85)
                         .addComponent(regresarBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(actualPass)
-                        .addComponent(nuevaPass)
-                        .addComponent(confirmarPass, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(usuarioTextCambio, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(actualPass, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(nuevaPass, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(confirmarPass, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)))
                 .addContainerGap(148, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(105, 105, 105)
+                .addGap(45, 45, 45)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(usuarioLabelCambio)
+                    .addComponent(usuarioTextCambio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(actualLabel)
                     .addComponent(actualPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -139,6 +154,12 @@ public class ViewCambio extends javax.swing.JFrame implements java.util.Observer
     private void regresarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regresarBotonActionPerformed
         controller.hide();
     }//GEN-LAST:event_regresarBotonActionPerformed
+
+    private void aceptarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarBotonActionPerformed
+        if(controller.verficarContra()== true){
+            controller.modificarContraseña(String.valueOf(usuarioTextCambio.getText()), String.valueOf(nuevaPass.getPassword()));
+        }
+    }//GEN-LAST:event_aceptarBotonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -183,7 +204,9 @@ public class ViewCambio extends javax.swing.JFrame implements java.util.Observer
     private javax.swing.JPasswordField confirmarPass;
     private javax.swing.JButton limpiarBoton;
     private javax.swing.JLabel nuevaLabel;
-    private javax.swing.JPasswordField nuevaPass;
+    public javax.swing.JPasswordField nuevaPass;
     private javax.swing.JButton regresarBoton;
+    private javax.swing.JLabel usuarioLabelCambio;
+    public javax.swing.JTextField usuarioTextCambio;
     // End of variables declaration//GEN-END:variables
 }

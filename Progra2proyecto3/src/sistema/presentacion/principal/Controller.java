@@ -47,4 +47,7 @@ public class Controller {
     public void exit(){
         this.view.setVisible(false);
     }
+    /*public void textUsuario(String usuario){
+        String usuarioOfi = usuario;
+    }*/
 }

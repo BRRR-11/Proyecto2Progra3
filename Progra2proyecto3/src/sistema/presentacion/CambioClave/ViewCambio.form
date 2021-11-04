@@ -31,6 +31,7 @@
                           <Component id="actualLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="nuevaLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="confirmarLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="usuarioLabelCambio" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -45,10 +46,11 @@
                       <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
                       <Component id="regresarBoton" min="-2" pref="114" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="actualPass" max="32767" attributes="0"/>
-                      <Component id="nuevaPass" max="32767" attributes="0"/>
-                      <Component id="confirmarPass" pref="196" max="32767" attributes="0"/>
+                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                      <Component id="usuarioTextCambio" alignment="0" max="32767" attributes="0"/>
+                      <Component id="actualPass" alignment="0" max="32767" attributes="0"/>
+                      <Component id="nuevaPass" alignment="0" max="32767" attributes="0"/>
+                      <Component id="confirmarPass" alignment="0" pref="196" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace pref="148" max="32767" attributes="0"/>
@@ -58,7 +60,12 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="usuarioLabelCambio" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="usuarioTextCambio" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="actualLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="actualPass" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -103,6 +110,9 @@
     <Component class="javax.swing.JPasswordField" name="actualPass">
     </Component>
     <Component class="javax.swing.JPasswordField" name="nuevaPass">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JPasswordField" name="confirmarPass">
     </Component>
@@ -115,6 +125,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Aceptar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="aceptarBotonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="regresarBoton">
       <Properties>
@@ -123,6 +136,16 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="regresarBotonActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="usuarioLabelCambio">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Usuario"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="usuarioTextCambio">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
   </SubComponents>
 </Form>

@@ -134,11 +134,12 @@ public class ClienteDao {
             return false;
         }        
     }
-    public void modificarContraseña(String contraseña) throws Exception{
+    public void modificarContraseña(String usuario,String contraseña) throws Exception{
         String sql="update cliente set password=?"+
                 "where nombre=?";
         PreparedStatement stm = db.prepareStatement(sql);
         stm.setString(1, contraseña);
+        stm.setString(2, usuario);
         int count=db.executeUpdate(stm);
         if (count==0){
             throw new Exception("Cliente no existe");
