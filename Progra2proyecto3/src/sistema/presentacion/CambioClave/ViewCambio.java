@@ -160,7 +160,16 @@ public class ViewCambio extends javax.swing.JFrame implements java.util.Observer
     private void aceptarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarBotonActionPerformed
         if(controller.verficarContra()== true){
             if(controller.validarContraseña(String.valueOf(actualPass.getPassword()))){
-                controller.modificarContraseña(String.valueOf(usuarioTextCambio.getText()),String.valueOf(nuevaPass.getPassword()));
+                if(String.valueOf(nuevaPass.getPassword()).equals(String.valueOf(confirmarPass.getPassword()))){
+                    controller.modificarContraseña(String.valueOf(usuarioTextCambio.getText()),String.valueOf(nuevaPass.getPassword()));
+                    actualPass.setText("");
+                    nuevaPass.setText("");
+                    confirmarPass.setText("");
+                    JOptionPane.showMessageDialog(null,"La contraseña se cambió con exito");
+                }
+                else{
+                    JOptionPane.showMessageDialog(null,"La contraseña no coincide");
+                }
             }
             else{
                 JOptionPane.showMessageDialog(null,"La contraseña es incorrecta");
