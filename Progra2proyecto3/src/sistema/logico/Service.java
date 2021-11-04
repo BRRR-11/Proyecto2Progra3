@@ -27,8 +27,8 @@ public class Service {
 
     
     // Service methods
-    public Cliente clienteGet(String cedula) throws Exception{
-        return cDao.read(cedula);
+    public Cliente clienteGet(String nombre) throws Exception{
+        return cDao.read(nombre);
     }
     
     public List<Cliente> clienteSearch(String cedula){

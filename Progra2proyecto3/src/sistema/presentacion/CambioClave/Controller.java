@@ -44,16 +44,6 @@ public class Controller {
     public void setearUsuario(String usuario){
         this.view.usuarioTextCambio.setText(usuario);
     }
-    /*public boolean validarContraseñaC(String contraseña){
-       if(this.view.actualPass.getText() == contraseña){
-           return true;
-       }
-       else{
-           return false;
-       }
-        
-    }*/
-    
     
     // Controller methods that respond to View events
     // probably invoke methods from Service,

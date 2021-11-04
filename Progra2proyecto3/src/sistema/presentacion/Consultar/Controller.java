@@ -39,7 +39,10 @@ public class Controller {
     public void hide(){
         this.view.setVisible(false);
         Aplicacion.PRINCIPAL.show();
-    }    
+    }  
+    public void setearUsuarioConsulta(String usuario){
+        this.view.usuarioConsulText.setText(usuario);
+    }
     
     // Controller methods that respond to View events
     // probably invoke methods from Service,

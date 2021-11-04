@@ -39,11 +39,11 @@ public class Controller {
         this.view.setVisible(false);
         //Aplicacion.INICIO.show();
     }   
-    public void principalShow(String usuario, String contraseña){
+    public void principalShow(String usuario){
         this.hide();
         Aplicacion.PRINCIPAL.show();
         Aplicacion.CAMBIO.setearUsuario(usuario);
-        //Aplicacion.CAMBIO.validarContraseñaC(contraseña);
+        Aplicacion.CONSULTAR.setearUsuarioConsulta(usuario);
     }
     
     public String contraseñaText(){

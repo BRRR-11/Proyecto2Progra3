@@ -73,6 +73,11 @@ public class ViewConsultar extends javax.swing.JFrame implements java.util.Obser
         saldoLabel.setText("Saldo");
 
         ConsultarBoton.setText("Consultar");
+        ConsultarBoton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConsultarBotonActionPerformed(evt);
+            }
+        });
 
         regresarBoton.setText("Regresar");
         regresarBoton.addActionListener(new java.awt.event.ActionListener() {
@@ -140,6 +145,10 @@ public class ViewConsultar extends javax.swing.JFrame implements java.util.Obser
         controller.hide();
     }//GEN-LAST:event_regresarBotonActionPerformed
 
+    private void ConsultarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarBotonActionPerformed
+        controller.clienteGet(usuarioConsulText.getText());
+    }//GEN-LAST:event_ConsultarBotonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -182,7 +191,7 @@ public class ViewConsultar extends javax.swing.JFrame implements java.util.Obser
     private javax.swing.JButton regresarBoton;
     private javax.swing.JTextField saldoConsulText;
     private javax.swing.JLabel saldoLabel;
-    private javax.swing.JTextField usuarioConsulText;
+    public javax.swing.JTextField usuarioConsulText;
     private javax.swing.JLabel usuarioLabelConsul;
     // End of variables declaration//GEN-END:variables
 }

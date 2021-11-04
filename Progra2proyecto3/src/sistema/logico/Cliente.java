@@ -20,25 +20,26 @@ public class Cliente {
     //String ced;        
     String usuario;
     String contraseña;
-    //double cantidad;
+    double cantidad;
 
     public Cliente() {
         //this.ced = "";
         this.usuario = "";
         this.contraseña = "";
-        //this.cantidad = 0;
+        this.cantidad = 0;
     }
 
     public Cliente(String nombre, String contraseña) {
         //this.ced = id;
         this.usuario = nombre;
         this.contraseña = contraseña;
+        this.cantidad = 0;
     }
     public Cliente(String nombre, String contraseña, double saldo) {
        // this.ced = id;
         this.usuario = nombre;
         this.contraseña = contraseña;
-        //this.cantidad = saldo;
+        this.cantidad = saldo;
     }
 
     /*public String getId() {
@@ -64,13 +65,13 @@ public class Cliente {
     public void setContraseña(String contraseña) {
         this.contraseña = contraseña;
     }
-    /*public double getSaldo() {
+    public double getSaldo() {
         return cantidad;
     }
 
     public void setSaldo(double saldo) {
         this.cantidad = saldo;
-    }*/
+    }
 
     @Override
     public int hashCode() {

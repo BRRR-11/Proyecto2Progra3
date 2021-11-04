@@ -24,13 +24,13 @@ public class ClienteDao {
     }
 
     public void create(Cliente c) throws Exception{
-        String sql="insert into cliente (nombre, password) "+
-                "values(?,?)";
+        String sql="insert into cliente (nombre, password,saldo) "+
+                "values(?,?,?)";
         PreparedStatement stm = db.prepareStatement(sql);
        // stm.setString(1, c.getId());
         stm.setString(1, c.getNombre());
         stm.setString(2, c.getContraseña());
-        //stm.setDouble(4, c.getSaldo());
+        stm.setDouble(3, c.getSaldo());
       
         int count=db.executeUpdate(stm);
         if (count==0){
@@ -114,7 +114,7 @@ public class ClienteDao {
             //c.setId(rs.getString(alias+".id"));
             c.setNombre(rs.getString(alias+".nombre"));
             c.setContraseña(rs.getString(alias+".password"));
-           // c.setSaldo(0); //Revisar
+            c.setSaldo(rs.getDouble(alias+".saldo")); //Revisar
             return c;
         } catch (SQLException ex) {
             return null;
