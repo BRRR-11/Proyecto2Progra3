@@ -24,12 +24,12 @@ public class ClienteDao {
     }
 
     public void create(Cliente c) throws Exception{
-        String sql="insert into cliente (id, nombre, password) "+
-                "values(?,?,?)";
+        String sql="insert into cliente (nombre, password) "+
+                "values(?,?)";
         PreparedStatement stm = db.prepareStatement(sql);
-        stm.setString(1, c.getId());
-        stm.setString(2, c.getNombre());
-        stm.setString(3, c.getContraseña());
+       // stm.setString(1, c.getId());
+        stm.setString(1, c.getNombre());
+        stm.setString(2, c.getContraseña());
         //stm.setDouble(4, c.getSaldo());
       
         int count=db.executeUpdate(stm);
@@ -38,10 +38,10 @@ public class ClienteDao {
         }
     }
     
-    public Cliente read(String id) throws Exception{
-        String sql="select * from cliente c where id=?";
+    public Cliente read(String nombre) throws Exception{
+        String sql="select * from cliente c where nombre=?";
         PreparedStatement stm = db.prepareStatement(sql);
-        stm.setString(1, id);
+        stm.setString(1, nombre);
         ResultSet rs =  db.executeQuery(stm);
         if (rs.next()) {
             Cliente c = from(rs, "c"); 
@@ -53,12 +53,12 @@ public class ClienteDao {
     }
     public void update(Cliente c) throws Exception{
         String sql="update cliente set nombre=?, password=?"+
-                "where id=?";
+                "where nombre=?";
         PreparedStatement stm = db.prepareStatement(sql);
-        stm.setString(1, c.getNombre());
-        stm.setString(2, c.getContraseña());
+        stm.setString(1, c.getContraseña());
+        stm.setString(2, c.getNombre());
         //stm.setDouble(3, c.getSaldo());
-        stm.setString(3, c.getId());
+        //stm.setString(3, c.getId());
         int count=db.executeUpdate(stm);
         if (count==0){
             throw new Exception("Cliente no existe");
@@ -66,9 +66,9 @@ public class ClienteDao {
     }
 
     public void delete(Cliente c) throws Exception{
-        String sql="delete from cliente where id=?";
+        String sql="delete from cliente where nombre=?";
         PreparedStatement stm = db.prepareStatement(sql);
-        stm.setString(1, c.getId());
+        stm.setString(1, c.getNombre());
         int count=db.executeUpdate(stm);
         if (count==0){
             throw new Exception("Cliente no existe");
@@ -95,7 +95,7 @@ public class ClienteDao {
         List<Cliente> resultado = new ArrayList<>();
         try {
             String sql="select * from cliente c "+
-                    "where c.id like ?";            
+                    "where c.nombre like ?";            
             PreparedStatement stm = db.prepareStatement(sql);
             stm.setString(1, id+"%");
             ResultSet rs =  db.executeQuery(stm); 
@@ -111,7 +111,7 @@ public class ClienteDao {
     public Cliente from(ResultSet rs, String alias){
         try {
             Cliente c= new Cliente();
-            c.setId(rs.getString(alias+".id"));
+            //c.setId(rs.getString(alias+".id"));
             c.setNombre(rs.getString(alias+".nombre"));
             c.setContraseña(rs.getString(alias+".password"));
            // c.setSaldo(0); //Revisar
@@ -122,7 +122,7 @@ public class ClienteDao {
     }   
     
     public boolean validarUsuario(String usuario, String contraseña) throws Exception{
-        String sql = "select id, nombre from cliente where nombre=? and password=?";
+        String sql = "select nombre from cliente where nombre=? and password=?";
         PreparedStatement stm = db.prepareStatement(sql);
         stm.setString(1, usuario);
         stm.setString(2, contraseña);
@@ -136,7 +136,7 @@ public class ClienteDao {
     }
     public void modificarContraseña(String contraseña) throws Exception{
         String sql="update cliente set password=?"+
-                "where id=?";
+                "where nombre=?";
         PreparedStatement stm = db.prepareStatement(sql);
         stm.setString(1, contraseña);
         int count=db.executeUpdate(stm);
