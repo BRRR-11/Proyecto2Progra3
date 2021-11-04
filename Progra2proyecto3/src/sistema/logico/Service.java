@@ -5,6 +5,7 @@
  */
 package sistema.logico;
 import java.util.List;
+import java.util.regex.Pattern;
 import sistema.data.ClienteDao;
 /**
  *
@@ -48,7 +49,9 @@ public class Service {
         int mayus = 0;
         int minus=0;
         int num=0;
-    
+        int car=0;
+        String str="";
+        
         if(contraseña.length()>7)
         {
             cant+=1;
@@ -80,8 +83,18 @@ public class Service {
                 num+=1;
             }
         }
+          //////////////////////Especiales/////////////////////////
+         for(int j=0; j<contraseña.length();j++) {
+            //int asciiVal = (int) str.charAt(j);
+            //char caracter= contraseña.charAt(j);
+           // char a = (asciiVal >= 32);
+           if((contraseña.charAt(j)>= 58 && contraseña.charAt(j)<= 64)||(contraseña.charAt(j)>= 33&&contraseña.charAt(j)<=47)||(contraseña.charAt(j)>= 91&&contraseña.charAt(j)<=96)||(contraseña.charAt(j)>= 123&&contraseña.charAt(j)<=126))
+           {
+               car+=1;
+           }
+        }
 
-        if(cant>=1 && mayus>=1 && minus>=1 && num>=1)
+        if(cant>=1 && mayus>=1 && minus>=1 && num>=1 && car>=1)
         {
             System.out.println("La contaseña es fuerte");
             return true;
