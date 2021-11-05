@@ -37,6 +37,8 @@ public class ViewRetiro extends javax.swing.JFrame implements java.util.Observer
         Cliente cliente = model.getCliente();
         //actualPass.setText(cliente.getContraseña());
         //saldoText.setText(String.valueOf(cliente.getSaldo()));
+       // resultadoText.setText(String.copyValueOf((Double.parseDouble(saldoText.getText()))-(Double.parseDouble(retirarText.getText()));
+         resultadoText.setText((cliente.getSaldo()-Double.parseDouble(retirarText.getText())));
     }
 //************** END MVC ***********
     /**
@@ -72,6 +74,24 @@ public class ViewRetiro extends javax.swing.JFrame implements java.util.Observer
         retirarLabel.setText("Monto a Retirar");
 
         resultadoLabel.setText("Resultado");
+
+        saldoText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saldoTextActionPerformed(evt);
+            }
+        });
+
+        retirarText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                retirarTextActionPerformed(evt);
+            }
+        });
+
+        resultadoText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                resultadoTextActionPerformed(evt);
+            }
+        });
 
         limpiarBotonRetiro.setText("Limpiar");
 
@@ -141,6 +161,20 @@ public class ViewRetiro extends javax.swing.JFrame implements java.util.Observer
         controller.hide();
     }//GEN-LAST:event_regresarBotonRetiroActionPerformed
 
+    private void saldoTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saldoTextActionPerformed
+        // TODO add your handling code here:
+         controller.clienteGet(saldoText.getText());
+    }//GEN-LAST:event_saldoTextActionPerformed
+
+    private void resultadoTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resultadoTextActionPerformed
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_resultadoTextActionPerformed
+
+    private void retirarTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_retirarTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_retirarTextActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -181,10 +215,10 @@ public class ViewRetiro extends javax.swing.JFrame implements java.util.Observer
     private javax.swing.JButton limpiarBotonRetiro;
     private javax.swing.JButton regresarBotonRetiro;
     private javax.swing.JLabel resultadoLabel;
-    private javax.swing.JTextField resultadoText;
+    public javax.swing.JTextField resultadoText;
     private javax.swing.JLabel retirarLabel;
-    private javax.swing.JTextField retirarText;
+    public javax.swing.JTextField retirarText;
     private javax.swing.JLabel saldoLabel;
-    private javax.swing.JTextField saldoText;
+    public javax.swing.JTextField saldoText;
     // End of variables declaration//GEN-END:variables
 }
