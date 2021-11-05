@@ -5,6 +5,7 @@
  */
 package sistema.presentacion.Retiro;
 import java.util.Observable;
+import javax.swing.JOptionPane;
 import sistema.logico.Cliente;
 /**
  *
@@ -38,7 +39,7 @@ public class ViewRetiro extends javax.swing.JFrame implements java.util.Observer
         //actualPass.setText(cliente.getContraseña());
         //saldoText.setText(String.valueOf(cliente.getSaldo()));
        // resultadoText.setText(String.copyValueOf((Double.parseDouble(saldoText.getText()))-(Double.parseDouble(retirarText.getText()));
-         resultadoText.setText((cliente.getSaldo()-Double.parseDouble(retirarText.getText())));
+        // resultadoText.setText((cliente.getSaldo()-Double.parseDouble(retirarText.getText())));
     }
 //************** END MVC ***********
     /**
@@ -96,6 +97,11 @@ public class ViewRetiro extends javax.swing.JFrame implements java.util.Observer
         limpiarBotonRetiro.setText("Limpiar");
 
         agregarBotonRetiro.setText("Agregar");
+        agregarBotonRetiro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregarBotonRetiroActionPerformed(evt);
+            }
+        });
 
         regresarBotonRetiro.setText("Regresar");
         regresarBotonRetiro.addActionListener(new java.awt.event.ActionListener() {
@@ -174,6 +180,30 @@ public class ViewRetiro extends javax.swing.JFrame implements java.util.Observer
     private void retirarTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_retirarTextActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_retirarTextActionPerformed
+
+    private void agregarBotonRetiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarBotonRetiroActionPerformed
+        // TODO add your handling code here:
+         if(Double.parseDouble(saldoText.getText())<=Double.parseDouble(retirarText.getText()))
+         {/*
+            if(controller.validarContraseña(String.valueOf(actualPass.getPassword())))
+            {
+                if(String.valueOf(nuevaPass.getPassword()).equals(String.valueOf(confirmarPass.getPassword())))
+                {
+                    controller.modificarContraseña(String.valueOf(usuarioTextCambio.getText()),String.valueOf(nuevaPass.getPassword()));
+                    actualPass.setText("");
+                    nuevaPass.setText("");
+                    confirmarPass.setText("");
+                    JOptionPane.showMessageDialog(null,"Clave modificada exitosamente");
+                }
+                else{
+                    JOptionPane.showMessageDialog(null,"La contraseña no coincide");
+                }
+            }
+            else{
+                JOptionPane.showMessageDialog(null,"La contraseña es incorrecta");
+            }
+        */}
+    }//GEN-LAST:event_agregarBotonRetiroActionPerformed
 
     /**
      * @param args the command line arguments
