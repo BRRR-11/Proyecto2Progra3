@@ -73,6 +73,12 @@ public class ViewConsultar extends javax.swing.JFrame implements java.util.Obser
 
         saldoLabel.setText("Saldo");
 
+        saldoConsulText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saldoConsulTextActionPerformed(evt);
+            }
+        });
+
         ConsultarBoton.setText("Consultar");
         ConsultarBoton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -149,6 +155,10 @@ public class ViewConsultar extends javax.swing.JFrame implements java.util.Obser
     private void ConsultarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarBotonActionPerformed
         controller.clienteGet(usuarioConsulText.getText());
     }//GEN-LAST:event_ConsultarBotonActionPerformed
+
+    private void saldoConsulTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saldoConsulTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_saldoConsulTextActionPerformed
 
     /**
      * @param args the command line arguments
