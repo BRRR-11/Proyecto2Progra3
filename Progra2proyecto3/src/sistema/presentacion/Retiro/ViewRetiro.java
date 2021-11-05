@@ -99,6 +99,11 @@ public class ViewRetiro extends javax.swing.JFrame implements java.util.Observer
         });
 
         limpiarBotonRetiro.setText("Limpiar");
+        limpiarBotonRetiro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                limpiarBotonRetiroActionPerformed(evt);
+            }
+        });
 
         agregarBotonRetiro.setText("Agregar");
         agregarBotonRetiro.addActionListener(new java.awt.event.ActionListener() {
@@ -209,6 +214,14 @@ public class ViewRetiro extends javax.swing.JFrame implements java.util.Observer
             JOptionPane.showMessageDialog(null,"Retiro denegado");
         }
     }//GEN-LAST:event_agregarBotonRetiroActionPerformed
+
+    private void limpiarBotonRetiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limpiarBotonRetiroActionPerformed
+        // TODO add your handling code here:
+        resultadoText.setText("");
+        saldoText.setText("");
+        retirarText.setText("");
+        usuarioRetiText.setText("");
+    }//GEN-LAST:event_limpiarBotonRetiroActionPerformed
 
     /**
      * @param args the command line arguments
