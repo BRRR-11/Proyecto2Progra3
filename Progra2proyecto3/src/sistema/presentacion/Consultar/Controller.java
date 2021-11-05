@@ -48,9 +48,9 @@ public class Controller {
     // probably invoke methods from Service,
     // and set data to Model, which in turn causes the View to update 
     
-    public void clienteGet(String cedula){
+    public void clienteGet(String nombre){
         try {
-            Cliente cliente = Service.instance().clienteGet(cedula);
+            Cliente cliente = Service.instance().clienteGet(nombre);
             model.setCliente(cliente);
             //model.setClientes(Arrays.asList(cliente));
             model.commit();
