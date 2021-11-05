@@ -44,6 +44,7 @@ public class Controller {
         Aplicacion.PRINCIPAL.show();
         Aplicacion.CAMBIO.setearUsuario(usuario);
         Aplicacion.CONSULTAR.setearUsuarioConsulta(usuario);
+        Aplicacion.RETIRO.usuarioRetiro(usuario);
     }
     
     public String contraseñaText(){
