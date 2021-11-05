@@ -36,6 +36,7 @@ public class ViewRetiro extends javax.swing.JFrame implements java.util.Observer
     @Override
     public void update(Observable o, Object arg) {
         Cliente cliente = model.getCliente();
+        usuarioRetiText.setText(cliente.getNombre());
         saldoText.setText(String.valueOf(cliente.getSaldo()));
         //actualPass.setText(cliente.getContraseña());
         //saldoText.setText(String.valueOf(cliente.getSaldo()));
@@ -196,13 +197,14 @@ public class ViewRetiro extends javax.swing.JFrame implements java.util.Observer
         // TODO add your handling code here:
         if(Double.parseDouble(saldoText.getText())>=Double.parseDouble(retirarText.getText()))
         {
-            controller.modificarSaldo(saldoText.getText(), retirarText.getText());
-            
-            
+            controller.modificarSaldo(usuarioRetiText.getText(), retirarText.getText());
+            saldoText.setText(String.valueOf(Double.valueOf(saldoText.getText())-Double.valueOf(retirarText.getText())));
+            retirarText.setText("");
+            JOptionPane.showMessageDialog(null,"Retiro exitoso");
         }
         else
         {
-            JOptionPane.showMessageDialog(null,"La contraseña es incorrecta");
+            JOptionPane.showMessageDialog(null,"Retiro denegado");
         }
     }//GEN-LAST:event_agregarBotonRetiroActionPerformed
 
