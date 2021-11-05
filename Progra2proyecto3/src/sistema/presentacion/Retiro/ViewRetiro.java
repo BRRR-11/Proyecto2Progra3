@@ -200,10 +200,7 @@ public class ViewRetiro extends javax.swing.JFrame implements java.util.Observer
             resultadoText.setText (String.valueOf(Double.valueOf(saldoText.getText())-Double.valueOf(retirarText.getText())));
             controller.modificarSaldo(resultadoText.getText(), retirarText.getText());
              saldoText.setText(resultadoText.getText());
-            //saldoText.setText(String.valueOf(Double.valueOf(saldoText.getText())-Double.valueOf(retirarText.getText())));
             retirarText.setText("");
-            //String aux=String.valueOf(Double.valueOf(saldoText.getText())-Double.valueOf(retirarText.getText()));
-            //System.out.println(String.valueOf(Double.valueOf(saldoText.getText())-Double.valueOf(retirarText.getText())));
             JOptionPane.showMessageDialog(null,"Retiro exitoso su saldo actual es de : "+resultadoText.getText());
             controller.clienteGet(usuarioRetiText.getText());
         }
