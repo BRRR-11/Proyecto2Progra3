@@ -186,7 +186,7 @@ public class ViewRetiro extends javax.swing.JFrame implements java.util.Observer
         // TODO add your handling code here:
         if(Double.parseDouble(saldoText.getText())>=Double.parseDouble(retirarText.getText()))
         {
-            //controller.modificarSaldo(usuario, saldo);
+            controller.modificarSaldo(saldoText.getText(), retirarText.getText());
             
             
         }
