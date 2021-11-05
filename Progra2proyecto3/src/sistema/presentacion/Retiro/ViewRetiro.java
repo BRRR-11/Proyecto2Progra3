@@ -36,6 +36,7 @@ public class ViewRetiro extends javax.swing.JFrame implements java.util.Observer
     @Override
     public void update(Observable o, Object arg) {
         Cliente cliente = model.getCliente();
+        saldoText.setText(String.valueOf(cliente.getSaldo()));
         //actualPass.setText(cliente.getContraseña());
         //saldoText.setText(String.valueOf(cliente.getSaldo()));
        // resultadoText.setText(String.copyValueOf((Double.parseDouble(saldoText.getText()))-(Double.parseDouble(retirarText.getText()));
@@ -185,7 +186,7 @@ public class ViewRetiro extends javax.swing.JFrame implements java.util.Observer
         // TODO add your handling code here:
         if(Double.parseDouble(saldoText.getText())<=Double.parseDouble(retirarText.getText()))
         {
-            //controller.
+            //controller.modificarSaldo(usuario, saldo);
             
             
         }
