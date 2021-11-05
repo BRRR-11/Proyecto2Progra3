@@ -139,17 +139,7 @@ public class Controller {
         }
     }  
     
-    public void modificarSaldo(String usuario,String saldo)
-    {
-         try{
-                 Service.instance().modificarSaldo(usuario, saldo);
-                  model.setCliente(new Cliente("","",Double.valueOf(saldo)));
-                model.commit();
-            
-        }catch (Exception ex){
-            //JOptionPane.showMessageDialog(null,"El monto es superior");
-        }
-    }
+    
         
     
 }
