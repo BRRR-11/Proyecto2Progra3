@@ -77,6 +77,11 @@ public class ViewCambio extends javax.swing.JFrame implements java.util.Observer
         confirmarLabel.setText("Confirmar Clave");
 
         limpiarBoton.setText("Limpiar");
+        limpiarBoton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                limpiarBotonActionPerformed(evt);
+            }
+        });
 
         aceptarBoton.setText("Aceptar");
         aceptarBoton.addActionListener(new java.awt.event.ActionListener() {
@@ -176,6 +181,12 @@ public class ViewCambio extends javax.swing.JFrame implements java.util.Observer
             }
         }
     }//GEN-LAST:event_aceptarBotonActionPerformed
+
+    private void limpiarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limpiarBotonActionPerformed
+        actualPass.setText("");
+        nuevaPass.setText("");
+        confirmarPass.setText("");
+    }//GEN-LAST:event_limpiarBotonActionPerformed
 
     /**
      * @param args the command line arguments

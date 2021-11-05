@@ -31,6 +31,7 @@ public class Controller {
     
     public void hide(){
         this.view.setVisible(false);
+        Aplicacion.INICIO.show();
     }
     public void consultarShow(){
         this.hide();

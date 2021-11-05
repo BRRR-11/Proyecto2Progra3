@@ -80,24 +80,6 @@ public class ViewRetiro extends javax.swing.JFrame implements java.util.Observer
 
         resultadoLabel.setText("Resultado");
 
-        saldoText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                saldoTextActionPerformed(evt);
-            }
-        });
-
-        retirarText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                retirarTextActionPerformed(evt);
-            }
-        });
-
-        resultadoText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                resultadoTextActionPerformed(evt);
-            }
-        });
-
         limpiarBotonRetiro.setText("Limpiar");
         limpiarBotonRetiro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -183,20 +165,6 @@ public class ViewRetiro extends javax.swing.JFrame implements java.util.Observer
     private void regresarBotonRetiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regresarBotonRetiroActionPerformed
         controller.hide();
     }//GEN-LAST:event_regresarBotonRetiroActionPerformed
-
-    private void saldoTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saldoTextActionPerformed
-        // TODO add your handling code here:
-         controller.clienteGet(saldoText.getText());
-    }//GEN-LAST:event_saldoTextActionPerformed
-
-    private void resultadoTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resultadoTextActionPerformed
-        // TODO add your handling code here:
-       
-    }//GEN-LAST:event_resultadoTextActionPerformed
-
-    private void retirarTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_retirarTextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_retirarTextActionPerformed
 
     private void agregarBotonRetiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarBotonRetiroActionPerformed
         // TODO add your handling code here:

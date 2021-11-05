@@ -76,6 +76,11 @@ public class ViewInicio extends javax.swing.JFrame implements java.util.Observer
         });
 
         cancelarBoton.setText("Cancelar");
+        cancelarBoton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelarBotonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -128,6 +133,11 @@ public class ViewInicio extends javax.swing.JFrame implements java.util.Observer
             }
         }
     }//GEN-LAST:event_agregarBotonActionPerformed
+
+    private void cancelarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarBotonActionPerformed
+       usuarioText.setText("");
+       passText.setText("");
+    }//GEN-LAST:event_cancelarBotonActionPerformed
 
     /**
      * @param args the command line arguments
