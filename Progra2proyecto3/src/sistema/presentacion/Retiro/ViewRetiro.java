@@ -36,7 +36,7 @@ public class ViewRetiro extends javax.swing.JFrame implements java.util.Observer
     @Override
     public void update(Observable o, Object arg) {
         Cliente cliente = model.getCliente();
-        usuarioRetiText.setText(cliente.getNombre());
+        //usuarioRetiText.setText(cliente.getNombre());
         saldoText.setText(String.valueOf(cliente.getSaldo()));
         //actualPass.setText(cliente.getContraseña());
         //saldoText.setText(String.valueOf(cliente.getSaldo()));
@@ -201,6 +201,7 @@ public class ViewRetiro extends javax.swing.JFrame implements java.util.Observer
             saldoText.setText(String.valueOf(Double.valueOf(saldoText.getText())-Double.valueOf(retirarText.getText())));
             retirarText.setText("");
             JOptionPane.showMessageDialog(null,"Retiro exitoso");
+            controller.clienteGet(usuarioRetiText.getText());
         }
         else
         {

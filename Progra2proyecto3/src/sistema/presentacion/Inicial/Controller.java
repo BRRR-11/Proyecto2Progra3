@@ -44,7 +44,7 @@ public class Controller {
         Aplicacion.PRINCIPAL.show();
         Aplicacion.CAMBIO.setearUsuario(usuario);
         Aplicacion.CONSULTAR.setearUsuarioConsulta(usuario);
-        //Aplicacion.RETIRO.usuarioRetiro(usuario);
+        Aplicacion.RETIRO.usuarioRetiro(usuario);
         Aplicacion.RETIRO.clienteGet(usuario);
     }
     
