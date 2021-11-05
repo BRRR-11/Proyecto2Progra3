@@ -184,7 +184,7 @@ public class ViewRetiro extends javax.swing.JFrame implements java.util.Observer
 
     private void agregarBotonRetiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarBotonRetiroActionPerformed
         // TODO add your handling code here:
-        if(Double.parseDouble(saldoText.getText())<=Double.parseDouble(retirarText.getText()))
+        if(Double.parseDouble(saldoText.getText())>=Double.parseDouble(retirarText.getText()))
         {
             //controller.modificarSaldo(usuario, saldo);
             

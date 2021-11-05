@@ -163,7 +163,7 @@ public class ClienteDao {
         String sql="update cliente set saldo=?"+
                 "where nombre=?";
         PreparedStatement stm = db.prepareStatement(sql);
-        stm.setString(3, saldo);
+        stm.setString(1, saldo);
         stm.setString(2, usuario);
         int count=db.executeUpdate(stm);
         if (count==0){
