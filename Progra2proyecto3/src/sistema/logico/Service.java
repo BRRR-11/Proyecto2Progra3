@@ -5,7 +5,6 @@
  */
 package sistema.logico;
 import java.util.List;
-import java.util.regex.Pattern;
 import sistema.data.ClienteDao;
 /**
  *
