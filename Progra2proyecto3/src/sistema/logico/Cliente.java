@@ -30,25 +30,16 @@ public class Cliente {
     }
 
     public Cliente(String nombre, String contraseña) {
-        //this.ced = id;
         this.usuario = nombre;
         this.contraseña = contraseña;
         this.cantidad = 0;
     }
     public Cliente(String nombre, String contraseña, double saldo) {
-       // this.ced = id;
         this.usuario = nombre;
         this.contraseña = contraseña;
         this.cantidad = saldo;
     }
 
-    /*public String getId() {
-        return ced;
-    }
-
-    public void setId(String id) {
-        this.ced = id;
-    }*/
  
     public String getNombre() {
         return usuario;

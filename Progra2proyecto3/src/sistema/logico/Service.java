@@ -136,4 +136,9 @@ public class Service {
     public void modificarContraseña(String usuario, String contraseña)throws Exception{
         cDao.modificarContraseña(usuario, contraseña);
     }
+    
+    public void modificarSaldo(String usuario,String saldo)throws Exception
+    {
+        cDao.modificarSaldo(usuario, saldo);
+    }
 }

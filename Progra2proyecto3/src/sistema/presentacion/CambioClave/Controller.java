@@ -137,6 +137,19 @@ public class Controller {
         }catch (Exception ex){
             //JOptionPane.showMessageDialog(null,"La contraseña es incorrecta");
         }
+    }  
+    
+    public void modificarSaldo(String usuario,String saldo)
+        {
+         try{
+                 Service.instance().modificarSaldo(usuario, saldo);
+                  model.setCliente(new Cliente("","",Double.valueOf(saldo)));
+                model.commit();
+            
+        }catch (Exception ex){
+            //JOptionPane.showMessageDialog(null,"La contraseña es incorrecta");
+        }
+        }
         
-    }
+    
 }

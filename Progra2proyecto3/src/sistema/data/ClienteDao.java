@@ -157,4 +157,18 @@ public class ClienteDao {
             throw new Exception("Cliente no existe");
         }        
     }
+    
+    public void modificarSaldo(String usuario,String saldo)throws Exception
+    {
+        String sql="update cliente set saldo=?"+
+                "where nombre=?";
+        PreparedStatement stm = db.prepareStatement(sql);
+        stm.setString(3, saldo);
+        stm.setString(2, usuario);
+        int count=db.executeUpdate(stm);
+        if (count==0){
+            throw new Exception("Cliente no existe");
+        } 
+    }
+    
 }
