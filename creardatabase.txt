@@ -1,0 +1,5 @@
+C:\Users\Admin\Desktop\Proyecto2\script\script.sql
+
+insert into cliente(nombre,password,saldo)
+values ('user1','user1Pru',25000);
+select * from cliente;
