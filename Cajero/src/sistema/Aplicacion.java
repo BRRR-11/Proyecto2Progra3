@@ -5,6 +5,7 @@
  */
 package sistema;
 
+
 /**
  *
  * @author ariqq
@@ -42,6 +43,7 @@ public class Aplicacion {
         
         INICIO.show();
         System.out.print(" Listo");
+        
     }
     public static sistema.presentacion.Inicial.Controller INICIO;
     public static sistema.presentacion.Principal.Controller PRINCIPAL;

@@ -134,6 +134,7 @@ public class ClienteDao {
             return false;
         }        
     }
+    /*
       public boolean validarContraseña(String contraseña) throws Exception{
         String sql = "select nombre from cliente where password=?";
         PreparedStatement stm = db.prepareStatement(sql);
@@ -145,7 +146,7 @@ public class ClienteDao {
         else{
             return false;
         }        
-    }
+    }*/
     public void modificarContraseña(String usuario,String contraseña) throws Exception{
         String sql="update cliente set password=?"+
                 "where nombre=?";

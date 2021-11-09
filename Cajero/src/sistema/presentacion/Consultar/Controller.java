@@ -7,7 +7,7 @@ package sistema.presentacion.Consultar;
 
 /**
  *
- * @author ariqq
+ * @author XPC
  */
 import java.util.ArrayList;
 import java.util.Arrays;
