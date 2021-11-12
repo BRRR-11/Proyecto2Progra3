@@ -165,6 +165,14 @@ public class Service {
             throw new Exception("Error no se pudo modificar");
         }
     }
+    public void logout() throws Exception{
+        out.writeObject("logout@");
+        out.flush();
+        System.out.println("hizo logout");
+    }
+    
+    
+
     
     
 }

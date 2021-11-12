@@ -48,7 +48,13 @@ public class Controller {
     public void exit(){
         this.view.setVisible(false);
     }
-    /*public void textUsuario(String usuario){
-        String usuarioOfi = usuario;
-    }*/
+    public void logout(){
+        try{
+            Service.instance().logout();
+        }
+        catch(Exception ex){
+             System.out.println("No pudo hacer logout");
+        }
+        
+    }
 }
