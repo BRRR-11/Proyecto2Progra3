@@ -64,6 +64,11 @@ public class Worker {
                         out.writeObject("OK");
                         break;
                     }
+                    case "logout":{
+                        s.close();
+                        condition = false;
+                        return;
+                    }
                     default:
                         throw new Exception();
                 }
