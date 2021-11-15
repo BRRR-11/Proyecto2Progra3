@@ -39,6 +39,7 @@ public class Worker {
         Thread hilo = new Thread(tarea);
         condition=true;
         hilo.start();
+        
     }
 
     public void listen(){
@@ -65,10 +66,11 @@ public class Worker {
                         break;
                     }
                     case "logout":{
-                        s.close();
+                        //s.close();
                         condition = false;
                         System.out.println("hizo logout worker");
-                        return;
+                        this.start();
+                        break;
                     }
                     default:
                         throw new Exception();

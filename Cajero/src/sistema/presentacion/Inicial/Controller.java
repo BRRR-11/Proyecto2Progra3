@@ -47,6 +47,10 @@ public class Controller {
         Aplicacion.RETIRO.usuarioRetiro(usuario);
         Aplicacion.RETIRO.clienteGet(usuario);
     }
+    public void limpiar(){
+        this.view.usuarioText.setText("");
+        this.view.passText.setText("");
+    }
     
     public String contraseñaText(){
         String actual = this.view.passText.getText();

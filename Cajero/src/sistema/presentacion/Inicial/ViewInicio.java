@@ -35,6 +35,8 @@ public class ViewInicio extends javax.swing.JFrame implements java.util.Observer
     @Override
     public void update(Observable o, Object arg) {
         Cliente cliente = model.getCliente();
+        // usuarioText.setText("");
+        // passText.setText("");
         //usuarioText.setText(cliente.getNombre());
         //passText.setText(cliente.getContraseña());  
     }

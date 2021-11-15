@@ -48,6 +48,9 @@ public class Controller {
     public void exit(){
         this.view.setVisible(false);
     }
+    public void limpiarCampos(){
+        Aplicacion.INICIO.limpiar();
+    }
     public void logout(){
         try{
             Service.instance().logout();

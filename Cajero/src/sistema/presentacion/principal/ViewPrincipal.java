@@ -132,6 +132,7 @@ public class ViewPrincipal extends javax.swing.JFrame implements java.util.Obser
 
     private void salirBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirBotonActionPerformed
         controller.logout();
+        controller.limpiarCampos();
         controller.hide();
     }//GEN-LAST:event_salirBotonActionPerformed
 
