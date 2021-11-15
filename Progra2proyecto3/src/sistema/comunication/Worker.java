@@ -67,6 +67,7 @@ public class Worker {
                     case "logout":{
                         s.close();
                         condition = false;
+                        System.out.println("hizo logout worker");
                         return;
                     }
                     default:

@@ -169,6 +169,7 @@ public class Service {
         out.writeObject("logout@");
         out.flush();
         System.out.println("hizo logout");
+        
     }
     
     

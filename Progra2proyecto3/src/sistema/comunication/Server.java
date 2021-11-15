@@ -18,9 +18,9 @@ public class Server {
         ss = new ServerSocket(PORT);
         System.out.println("Servidor iniciado...");
     }
-    
+    boolean continuar = true;
     public void run(){
-        boolean continuar = true;
+        
         String solicitud;
         Socket s;
         ObjectInputStream in;
@@ -54,6 +54,9 @@ public class Server {
 
             } catch (IOException ex) { }
         }
+    }
+    public void detener(){
+        continuar = false;
     }
     
 }
