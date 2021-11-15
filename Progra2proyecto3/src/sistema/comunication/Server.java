@@ -18,7 +18,7 @@ public class Server {
         ss = new ServerSocket(PORT);
         System.out.println("Servidor iniciado...");
     }
-    boolean continuar = true;
+    public static boolean continuar = true;
     public void run(){
         
         String solicitud;

@@ -166,11 +166,16 @@ public class Service {
         }
     }
     public void logout() throws Exception{
-        out.writeObject("logout@");
+        out.writeObject("salir@");
         out.flush();
         System.out.println("hizo logout");
         
     }
+    /*public void loging()throws Exception{
+        out.writeObject("login@");
+        out.flush();
+        System.out.println("hizo login");
+    }*/
     
     
 

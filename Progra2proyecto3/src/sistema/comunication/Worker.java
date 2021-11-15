@@ -24,7 +24,7 @@ public class Worker {
     }
     
     private boolean condition=false;
-    
+
     public void start(){
         
         System.out.println("Worker "+ usuario.getNombre()+ " atendiendo peticiones...");
@@ -64,13 +64,12 @@ public class Worker {
                         out.writeObject("OK");
                         break;
                     }
-                    case "logout":{
-                        //s.close();
+                    case "salir":{
                         condition = false;
                         System.out.println("hizo logout worker");
-                        
                         break;
                     }
+                    
                     default:
                         throw new Exception();
                 }
